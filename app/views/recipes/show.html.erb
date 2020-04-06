@@ -1,3 +1,10 @@
 <h2><%= @recipe.name %></h2>
 <%= @recipe.category %>
+<h4>List of doses</h4>
+<ul>
+  <% @recipe.doses.each do |dose| %>
+    <li><%= dose.description %></li>
+  <% end %>
+</ul>
 <p><%= link_to "Back to list", recipes_path %></p>
+<p><%= link_to "Add dose", new_recipe_dose_path(@recipe) %></p>
