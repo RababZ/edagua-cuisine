@@ -5,3 +5,34 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts 'Cleaning database...'
+Recipe.destroy_all
+
+puts 'Creating dish recipes...'
+10.times do
+  recipe = Recipe.create(
+    name: Faker::Food.dish,
+    category: 'Dish'
+  )
+  puts "Created #{recipe.name}"
+end
+
+# puts 'Creating dessert recipes...'
+# 10.times do
+#   recipe = Recipe.create(
+#     name: Faker::Dessert.variety,
+#     category: 'dessert'
+#   )
+#   puts "Created #{recipe.name}"
+# end
+
+# puts 'Creating drink recipes...'
+# 10.times do
+#   recipe = Recipe.create(
+#     name: Faker::Coffee.blend_name,
+#     category: 'drink'
+#   )
+#   puts "Created #{recipe.name}"
+# end
