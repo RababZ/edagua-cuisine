@@ -1,0 +1,32 @@
+.home-banner {
+  background-image: url('https://images.unsplash.com/photo-1534273006427-1686266049b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  background-size: cover;
+  height: 100vh;
+  color: #f9c659;
+  text-align: left;
+  padding-top: 40vh;
+}
+
+.home-banner h1 {
+  margin: 0;
+  color: $yellow;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.home-banner p {
+  font-size: 18px;
+  color: $gray;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  padding-top: 20px;
+  line-height: 2;
+  padding-bottom: 20px;
+}
+
+.page-banner {
+  background-color: white;
+  height: 100vh;
+  padding-top: 20vh;
+}
