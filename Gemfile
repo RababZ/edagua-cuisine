@@ -55,3 +55,4 @@ gem 'rails-controller-testing', group: [ :test ]
 
 # For cloudinary
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.12.0'
