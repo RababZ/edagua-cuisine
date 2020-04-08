@@ -1,6 +1,10 @@
-<%= simple_form_for(@recipe) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category %>
-  <%= f.submit %>
-<% end %>
-<p><%= link_to "Back to list", recipes_path %></p>
+<div class="page-banner">
+  <div class="edagua-container">
+    <%= simple_form_for @recipe do |f| %>
+      <%= f.input :name %>
+      <%= f.input :category %>
+      <%= f.button :submit, class: "btn btn-info" %>
+    <% end %>
+    <p><%= link_to "Back to list", recipes_path %></p>
+  </div>
+</div>

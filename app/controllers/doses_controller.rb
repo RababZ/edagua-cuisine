@@ -5,14 +5,15 @@ class DosesController < ApplicationController
   end
 
   def create
-    # @dose = Dose.new(dose_params)
-    # @recipe = Recipe.find(params[:recipe_id])
-    # @dose.recipe = @recipe
-    # if @dose.save
-    #   redirect_to recipe_path(@recipe)
-    # else
-    #   render :new
-    # end
+    @recipe = Recipe.find(params[:recipe_id])
+    @dose = Dose.new(dose_params)
+
+    @dose.recipe = @recipe
+    if @dose.save
+      redirect_to recipe_path(@recipe)
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -21,6 +22,6 @@ class DosesController < ApplicationController
   private
 
   def dose_params
-    params.require(:dose).permit(:description)
+    params.require(:dose).permit(:description, :ingredient_id)
   end
 end

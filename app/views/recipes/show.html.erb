@@ -10,7 +10,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
         <ul>
           <% @recipe.doses.each do |dose| %>
-            <li><%= dose.description %></li>
+            <li><%= "#{dose.description} #{dose.ingredient.name}" %></li>
           <% end %>
         </ul>
         <p><%= link_to "Add dose", new_recipe_dose_path(@recipe) %></p>

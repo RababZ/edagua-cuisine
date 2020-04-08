@@ -1,4 +1,9 @@
-<%= simple_form_for [ @recipe, @dose ] do |f| %>
-  <%= f.input :description %>
-  <%= f.submit "Submit" %>
-<% end %>
+<div class="page-banner">
+  <div class="edagua-container">
+    <%= simple_form_for [ @recipe, @dose ] do |f| %>
+      <%= f.association :ingredient, include_hidden: false %>
+      <%= f.input :description %>
+      <%= f.button :submit, class: "btn btn-info" %>
+    <% end %>
+  </div>
+</div>

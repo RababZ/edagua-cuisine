@@ -17,9 +17,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  pool: 5
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+  # replaced the line below with pool:5
+  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
@@ -78,8 +81,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: edagua_cuisine_production
-  username: edagua_cuisine
-  password: <%= ENV['EDAGUA_CUISINE_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: edagua_cuisine_production
+#   username: edagua_cuisine
+#   password: <%= ENV['EDAGUA_CUISINE_DATABASE_PASSWORD'] %>
