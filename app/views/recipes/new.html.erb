@@ -3,6 +3,7 @@
     <%= simple_form_for @recipe do |f| %>
       <%= f.input :name %>
       <%= f.input :category %>
+      <%= f.input :photo, as: :file %>
       <%= f.button :submit, class: "btn btn-info" %>
     <% end %>
     <p><%= link_to "Back to list", recipes_path %></p>
