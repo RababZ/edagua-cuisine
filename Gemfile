@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+# Use devise for authentification
+gem 'devise'
 # Use Faker for seed
 gem 'faker'
 # Front-end gems
