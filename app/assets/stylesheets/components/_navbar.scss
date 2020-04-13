@@ -1,16 +1,22 @@
-.navbar-edagua {
-  // justify-content: space-between;
+.navbar-edaga {
+  justify-content: space-between;
   background: transparent;
+  position: absolute;
+  padding: 0.5rem 1rem;
 }
 
-.navbar-edagua-white {
+.navbar-edaga-white {
   background: white;
 }
 
-.navbar-edagua .navbar-collapse {
+.navbar-edaga .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-edagua .navbar-brand img {
+.navbar-brand img {
   width: 40px;
+}
+
+.navbar-logo {
+  width: 50px;
 }

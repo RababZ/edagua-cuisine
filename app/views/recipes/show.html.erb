@@ -1,5 +1,5 @@
 <div class="page-banner">
-  <div class="edagua-container">
+  <div class="container">
     <% if @recipe.photo.attached? %>
       <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
