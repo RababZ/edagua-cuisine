@@ -1,0 +1,9 @@
+<div class="page-banner">
+  <div class="container">
+    <%= simple_form_for [ @recipe, @review ] do |f| %>
+      <%= f.input :rating %>
+      <%= f.input :content %>
+      <%= f.button :submit, class: "btn btn-info" %>
+    <% end %>
+  </div>
+</div>
