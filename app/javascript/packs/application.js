@@ -18,8 +18,10 @@ require("channels")
 
 import 'bootstrap';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { initUpdateReviewOnScrollAndClick } from '../components/review';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
+  initUpdateReviewOnScrollAndClick();
 });
