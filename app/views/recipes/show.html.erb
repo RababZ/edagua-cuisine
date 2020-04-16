@@ -18,7 +18,10 @@
             <li><%= "#{dose.description} #{dose.ingredient.name}" %></li>
           <% end %>
         </ul>
-        <p><%= link_to "Add dose", new_recipe_dose_path(@recipe) %></p>
+        <p>
+          <% if current_user == @recipe.user %>
+            <%= link_to "Add dose", new_recipe_dose_path(@recipe) %></p>
+          <% end %>
       </div>
     </div>
 
