@@ -7,14 +7,26 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+
+
 puts 'Cleaning database...'
 Recipe.destroy_all
+
+puts "Creating users.."
+
+user = User.create(
+  email: 'test@edaga.com',
+  password: '123456'
+  )
+
+puts "Created #{user.email}"
 
 puts 'Creating dish recipes...'
 10.times do
   recipe = Recipe.create(
     name: Faker::Food.dish,
-    category: 'Dish'
+    category: 'Dish',
+    user: user
   )
   puts "Created #{recipe.name}"
 end
