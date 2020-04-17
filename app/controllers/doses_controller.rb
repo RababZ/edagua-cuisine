@@ -1,14 +1,18 @@
 class DosesController < ApplicationController
+
+  before_action :set_recipe, only: [:new, :create]
+
   def new
-    @recipe = Recipe.find(params[:recipe_id])
     @dose = Dose.new
+    authorize @dose
+    authorize @recipe
   end
 
   def create
-    @recipe = Recipe.find(params[:recipe_id])
     @dose = Dose.new(dose_params)
-
     @dose.recipe = @recipe
+    authorize @dose
+    authorize @recipe
     if @dose.save
       redirect_to recipe_path(@recipe)
     else
@@ -20,6 +24,10 @@ class DosesController < ApplicationController
   end
 
   private
+
+  def set_recipe
+    @recipe = Recipe.find(params[:recipe_id])
+  end
 
   def dose_params
     params.require(:dose).permit(:description, :ingredient_id)
