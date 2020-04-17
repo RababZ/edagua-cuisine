@@ -6,10 +6,26 @@ class RecipePolicy < ApplicationPolicy
   end
 
   def create?
-    return true # Anyone that is logged in can create a recipe
+    # Anyone that is logged in can create a recipe
+    return true
   end
 
   def show?
+    # Anyone that is logged in can see a recipe
     return true
   end
+
+  def update?
+    # User can edit and update if he/she create the recipe
+    user_is_owner_or_admin?
+  end
+
+  def destroy?
+    user_is_owner_or_admin?
+  end
+
+  def user_is_owner_or_admin?
+    record.user == user || user.admin
+  end
+
 end

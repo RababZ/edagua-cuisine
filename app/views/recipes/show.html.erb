@@ -1,7 +1,11 @@
 <div class="page-banner">
   <div class="container-edagua">
     <h2><%= @recipe.name %></h2>
-
+    <p>
+      <% if policy(@recipe).edit? %>
+        <%= link_to "Edit recipe", edit_recipe_path(@recipe) %>
+      <% end %>
+    </p>
     <% if @recipe.photo.attached? %>
       <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
