@@ -8,6 +8,15 @@
       </div>
       <div>
         <p><%= link_to "View", recipe_path(recipe) %></p>
+        <% if recipe.user == current_user %>
+          <p><%= link_to "Edit", edit_recipe_path(recipe) %></p>
+          <p>
+          <%= link_to "Delete",
+              recipe_path(recipe),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+          </p>
+        <% end %>
       </div>
     </div>
   </div>
