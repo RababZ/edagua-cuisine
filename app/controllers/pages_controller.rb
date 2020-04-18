@@ -23,6 +23,6 @@ class PagesController < ApplicationController
   private
 
   def profile_params
-    params.require(:user).permit(:first_name, :last_name, :username, :country)
+    params.require(:user).permit(:first_name, :last_name, :username, :country, :photo)
   end
 end
