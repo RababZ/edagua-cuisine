@@ -5,6 +5,10 @@ class RecipePolicy < ApplicationPolicy
     end
   end
 
+  # def my_recipes?
+  #   return true
+  # end
+
   def create?
     # Anyone that is logged in can create a recipe
     return true

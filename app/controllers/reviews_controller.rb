@@ -1,12 +1,12 @@
 class ReviewsController < ApplicationController
+  before_action :set_recipe, only: [:new, :create]
+
   def new
-    @recipe = Recipe.find(params[:recipe_id])
     @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
-    @recipe = Recipe.find(params[:recipe_id])
     @review.recipe = @recipe
     if @review.save
       redirect_to recipe_path(@recipe)
@@ -16,6 +16,11 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+  def set_recipe
+    @recipe = Recipe.find(params[:recipe_id])
+    authorize @recipe
+  end
 
   def review_params
     params.require(:review).permit(:rating, :content)

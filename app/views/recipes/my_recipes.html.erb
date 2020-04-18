@@ -27,7 +27,7 @@
       </div>
       <div class="tab-pane fade" id="dish" role="tabpanel" aria-labelledby="dish-tab">
         <div class="row">
-          <% @recipes.where(category: "Dish").each do |recipe| %>
+          <% @recipes.where(category: "Dish", user: current_user).each do |recipe| %>
             <%= render "recipe_card", recipe: recipe %>
           <% end %>
         </div>

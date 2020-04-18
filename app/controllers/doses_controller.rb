@@ -5,14 +5,12 @@ class DosesController < ApplicationController
   def new
     @dose = Dose.new
     authorize @dose
-    authorize @recipe
   end
 
   def create
     @dose = Dose.new(dose_params)
     @dose.recipe = @recipe
     authorize @dose
-    authorize @recipe
     if @dose.save
       redirect_to recipe_path(@recipe)
     else
@@ -26,7 +24,9 @@ class DosesController < ApplicationController
   private
 
   def set_recipe
-    @recipe = Recipe.find(params[:recipe_id])
+    # @recipe = Recipe.find(params[:recipe_id])
+    @recipe = policy_scope(Recipe).find(params[:recipe_id])
+    authorize @recipe
   end
 
   def dose_params
