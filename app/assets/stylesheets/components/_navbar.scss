@@ -1,22 +1,17 @@
-.navbar-edaga {
-  justify-content: space-between;
-  background: transparent;
-  position: absolute;
-  padding: 0.5rem 1rem;
-}
-
-.navbar-edaga-white {
+.navbar-white {
   background: white;
 }
 
-.navbar-edaga .navbar-collapse {
-  flex-grow: 0;
-}
-
 .navbar-brand img {
-  width: 40px;
+  width: 60px;
 }
 
-.navbar-logo {
-  width: 50px;
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-right-item {
+  padding-left: 10px;
 }

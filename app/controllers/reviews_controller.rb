@@ -15,6 +15,8 @@ class ReviewsController < ApplicationController
     end
   end
 
+
+
   private
 
   def set_recipe

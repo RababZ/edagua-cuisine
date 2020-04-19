@@ -12,6 +12,7 @@
 }
 
 .card-recipes-info {
+  height: 100px;
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -27,4 +28,9 @@
     opacity: .7;
     margin: 0;
   }
+}
+
+.card-recipes-info-right {
+  display: flex;
+
 }

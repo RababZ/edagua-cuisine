@@ -29,7 +29,8 @@ class RecipePolicy < ApplicationPolicy
   end
 
   def user_is_owner_or_admin?
-    record.user == user || user.admin
+    record.user == user
+    # record.user == user || user.admin
   end
 
 end
