@@ -1,0 +1,14 @@
+<div class="card-review">
+  <% if review.user.photo.attached? %>
+    <%= cl_image_tag review.user.photo.key, height: 300, width: 400, crop: :fill, class: "avatar" %>
+  <% else %>
+    <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd-e9Kn0P1AAKT-EdAiaAVUvBtRVAJqONXIL0pJ402cOAzVi0i", class: "avatar" %>
+  <% end %>
+  <% review.rating.to_i.times do  %>
+    <i class="fas fa-star"></i>
+  <% end %>
+  <% (5 - review.rating.to_i).times do  %>
+    <i class="far fa-star"></i>
+  <% end %>
+  <p><%= review.content %></p>
+</div>

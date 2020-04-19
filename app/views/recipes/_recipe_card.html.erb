@@ -19,17 +19,21 @@
               <i class="fas fa-star-half-alt"></i>
               <% (5 - ratings_average_i - 1).times do %>
                 <i class="far fa-star"></i>
+                <i><%= "(#{ratings.length} votes)" %></i>
               <% end %>
             <% else %>
               <% (5 - ratings_average_i).times do %>
               <i class="far fa-star"></i>
               <% end %>
+              <i><%= "(#{ratings.length} votes)" %></i>
             <% end %>
             <% else %>
               <% 5.times do %>
               <i class="far fa-star"></i>
             <% end %>
+            <i><%= "(#{ratings.length} vote)" %></i>
           <% end %>
+
         </div>
 
       </div>

@@ -1,5 +1,5 @@
-<div class="page-banner">
-  <div class="container-edagua">
+<div class="container-fluid wrapper">
+
     <h2><%= @recipe.name %></h2>
     <p>
       <% if policy(@recipe).edit? %>
@@ -28,23 +28,16 @@
           <% end %>
       </div>
     </div>
+    <h3>Reviews</h3>
+    <% @recipe.reviews.each do |review| %>
+      <%= render "review_card", review: review %>
+    <% end %>
 
-    <div>
-      <% @recipe.reviews.each do |review| %>
-        <p>Review:</p>
-        <% review.rating.to_i.times do  %>
-          <i class="fas fa-star"></i>
-        <% end %>
-        <% (5 - review.rating.to_i).times do  %>
-          <i class="far fa-star"></i>
-        <% end %>
-        <p><%= review.content %></p>
-      <% end %>
-    </div>
+
 
     <%= link_to "Add review", new_recipe_review_path(@recipe) %>
     <div class="btn btn-info">
       <%= link_to "Back to list", recipes_path %>
     </div>
-  </div>
+
 </div>
