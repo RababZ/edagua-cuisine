@@ -4,19 +4,34 @@
     <div class="card-recipes-info">
       <div>
         <h2><%= recipe.name %></h2>
-        <% 5.times do  %>
-          <i class="fas fa-star"></i>
-        <% end %>
-        <p><%= recipe.category %></p>
-        <% ratings = [] %>
-        <% recipe.reviews.each do |review| %>
-          <% ratings << review.rating %>
-        <% end %>
-        <% if ratings.length > 0 %>
-          <%= (ratings.sum / ratings.length).to_f %>
-        <% end %>
+        <div class="rating-stars rating-stars-small">
+          <% ratings = [] %>
+          <% recipe.reviews.each do |review| %>
+            <% ratings << review.rating %>
+          <% end %>
+          <% if ratings.length > 0 %>
+            <% ratings_average_i = (ratings.sum / ratings.length).to_i %>
+            <% reminder = ratings.sum.to_f % ratings.length %>
+            <% ratings_average_i.times do  %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% if reminder > 0 %>
+              <i class="fas fa-star-half-alt"></i>
+              <% (5 - ratings_average_i - 1).times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            <% else %>
+              <% (5 - ratings_average_i).times do %>
+              <i class="far fa-star"></i>
+              <% end %>
+            <% end %>
+            <% else %>
+              <% 5.times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+          <% end %>
+        </div>
 
-        <%#= ratings.inject{ |sum, el| sum + el }.to_f / ratings.size %>
       </div>
       <div>
         <p><%= link_to "View", recipe_path(recipe) %></p>
