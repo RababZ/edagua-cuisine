@@ -17,6 +17,7 @@
             <%= link_to "Add recipe", new_recipe_path, class: "button button-primary " %>
           </div>
           <div class="nav-item navbar-right-item dropdown">
+            <!-- The avatar profile picture -->
             <% if current_user.photo.attached? %>
               <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", "data-toggle" => "dropdown", "aria-hospopup" => "true", "aria-expanded" => "false" %>
               <% else %>

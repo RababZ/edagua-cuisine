@@ -2,7 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.05);
-  margin: 10px;
+  margin: 10px;;
 }
 
 .card-recipes > img {
@@ -12,7 +12,7 @@
 }
 
 .card-recipes-info {
-  height: 80px;
+  height: 70px;
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -54,3 +54,13 @@
 .review-date {
   font-size: 10px;
 }
+
+.link-fa {
+  color: $green;
+  &:hover {
+    color: $green;
+    text-decoration-line: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  }
+}
+

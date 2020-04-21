@@ -1,9 +1,17 @@
 <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+
   <div class="card-recipes">
-    <img src="https://images.unsplash.com/photo-1517314687957-13af800de1c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" />
+    <!-- The recipe main picture -->
+    <% if recipe.photo.attached? %>
+      <%= cl_image_tag recipe.photo.key, height: 200, width: 400, crop: :fill, class: "" %>
+    <% else %>
+      <img src="https://images.unsplash.com/photo-1517314687957-13af800de1c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" />
+    <% end %>
+    <!-- Recipe general info - card -->
     <div class="card-recipes-info">
       <div>
         <h2><%= recipe.name %></h2>
+        <!-- Average rating of recipe -->
         <div class="rating-stars rating-stars-small">
           <% ratings = [] %>
           <% recipe.reviews.each do |review| %>
@@ -27,29 +35,31 @@
               <% end %>
               <i><%= "(#{ratings.length} votes)" %></i>
             <% end %>
-            <% else %>
-              <% 5.times do %>
+          <% else %>
+            <% 5.times do %>
               <i class="far fa-star"></i>
             <% end %>
             <i><%= "(#{ratings.length} vote)" %></i>
           <% end %>
-
         </div>
-
       </div>
       <div>
-        <p><%= link_to "View", recipe_path(recipe) %></p>
         <% if policy(recipe).edit? %>
-          <p><%= link_to "Edit", edit_recipe_path(recipe) %></p>
-          <p>
-          <%= link_to "Delete",
-              recipe_path(recipe),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-          </p>
+          <%= link_to edit_recipe_path(recipe), class: "link-fa" do %>
+            <i class="fa fa-edit"></i>
+          <% end %>
+          <%= link_to recipe_path(recipe),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "link-fa" do %>
+            <i class="fa fa-trash link-fa"></i>
+          <% end %>
         <% end %>
       </div>
     </div>
+    <!-- Making the card link to the recipe detailed page (show_page) -->
+    <%= link_to recipe_path(recipe) do %>
+      <div class="stretched-link"></div>
+    <% end %>
   </div>
 </div>
-

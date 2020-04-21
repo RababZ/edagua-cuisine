@@ -1,5 +1,6 @@
 .navbar-white {
   background: white;
+  padding: 0.5rem 100px;
 }
 
 .navbar-brand img {
@@ -14,4 +15,15 @@
 
 .navbar-right-item {
   padding-left: 10px;
+}
+
+
+@media(max-width: 992px){
+  .navbar-white { padding: 0.5rem 80px;}
+}
+@media(max-width: 768px){
+  .navbar-white { padding: 0.5rem 50px;}
+}
+@media(max-width: 576px){
+  .navbar-white { padding: 0.5rem 20px;}
 }

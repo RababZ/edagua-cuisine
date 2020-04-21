@@ -1,3 +1,17 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.photo-food-md {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.recipe-summary {
+  width: 60vw;
+
+}
+
+.recipe-summary-text {
+
+}

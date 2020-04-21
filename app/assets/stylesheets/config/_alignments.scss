@@ -3,3 +3,17 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
+.container-edaga {
+  margin: 0 100px;
+}
+
+@media(max-width: 992px){
+  .container-edaga { margin: 80px;}
+}
+@media(max-width: 768px){
+  .container-edaga { margin: 50px;}
+}
+@media(max-width: 576px){
+  .container-edaga { margin: 20px;}
+}
