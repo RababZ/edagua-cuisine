@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container-edaga">
-    <div class="row">
-      <div class="col-12 col-md-8">
+    <div class="recipe-summary">
+      <div class="recipe-summary-header">
         <div class="d-flex justify-content-between">
           <h2><%= @recipe.name %></h2>
           <% if policy(@recipe).edit? %>
@@ -11,23 +11,72 @@
            <% end %>
         </div>
       </div>
-    </div>
-
-
-
-
-
-        <div class="d-flex justify-content-start recipe-summary">
-          <% if @recipe.photo.attached? %>
-            <%= cl_image_tag @recipe.photo.key, height: 200, width: 200, crop: :fill, radius: 10 %>
-          <% else %>
-            <img src="https://images.unsplash.com/photo-1517314687957-13af800de1c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" class="photo-food-md"/>
-          <% end %>
-
-          <div class="recipe-summary-text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
-          </div>
+      <div class="recipe-summary-content">
+        <% if @recipe.photo.attached? %>
+          <%= cl_image_tag @recipe.photo.key, height: 200, width: 200, crop: :fill, radius: 10 %>
+        <% else %>
+          <img src="https://images.unsplash.com/photo-1517314687957-13af800de1c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" class="photo-food-md"/>
+        <% end %>
+        <div class="recipe-summary-text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
         </div>
+      </div>
+      <div class="recipe-summary-card">
+        <div class="item">
+          <i class="fas fa-stopwatch"></i>
+          <%= @recipe.active_time %>
+        </div>
+        <div class="item">
+          <i class="fas fa-pause-circle"></i>
+          <%= @recipe.idle_time %>
+        </div>
+        <div class="item">
+          <i class="fas fa-users"></i>
+          <%= @recipe.difficulty %>
+        </div>
+        <div class="item">
+          <i class="fas fa-crown"></i>
+          <%= @recipe.serving_size %>
+        </div>
+      </div>
+    </div>
+    <div class="recipe-content">
+      <div class="recipe-ingredients">
+        <h3>Ingredients</h3>
+         <p>Two apples</p>
+         <p>Two apples</p>
+         <p>Two apples</p>
+         <p>Two apples</p>
+      </div>
+      <div class="recipe-steps">
+        <h3>Recipe</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit.</p>
+        <p> Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
+      </div>
+    </div>
+    <div class="container-cards-reviews">
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

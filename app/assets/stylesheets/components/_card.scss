@@ -64,3 +64,15 @@
   }
 }
 
+
+.recipe-summary-card {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  border: solid 0.5px $light-gray;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+

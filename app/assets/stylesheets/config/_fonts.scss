@@ -1,10 +1,9 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Josefin+Slab:ital,wght@0,100;0,300;0,400;0,600;0,700;1,100;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 // Define fonts for body and headers
-$headers-font: 'Josefin Slab', "serif";
-$body-font: "Josefin Slab", "serif";
-
+$headers-font: 'Noto Sans KR', "sans-serif";
+$body-font: "Noto Sans KR", "sans-serif";
 
 
 // font-family: 'Gochi Hand', cursive;
@@ -18,3 +17,11 @@ $body-font: "Josefin Slab", "serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+h2 {
+  font-weight: 500;
+}
+
+p {
+  font-size: 14px;
+}

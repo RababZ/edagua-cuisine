@@ -6,12 +6,66 @@
   width: 200px;
   object-fit: cover;
   border-radius: 10px;
+  margin: 0 10px;
 }
+
 .recipe-summary {
   width: 60vw;
+}
 
+
+.recipe-summary-content {
+  display:flex;
 }
 
 .recipe-summary-text {
+  margin-left: 10px;
+  text-align: justify;
+}
 
+.recipe-content {
+  // margin: 0 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-ingredients {
+  width: 200px;
+  background-color: $green;
+  color: white;
+  border: $green 1px solid;
+  padding: 10px;
+  order: 2;
+  // flex-grow: 0;
+  flex-shrink: 0;
+  // position: absolute;
+  // right: 10px;
+  // border-radius: 5px;
+}
+
+.recipe-steps {
+  width: 60vw;
+  text-align: justify;
+}
+
+// Large devices (desktops, 992px)
+@media(max-width: 992px){
+
+}
+// Medium devices (tablets, 768px)
+@media(max-width: 768px){
+  .recipe-summary { width: calc(100vw - 100px)};
+  .recipe-content {display: block};
+  .recipe-ingredients { width: calc(100vw - 100px)};
+}
+
+// Small devices (landscape phones, 576px)
+@media(max-width: 576px){
+  .recipe-summary { width: calc(100vw - 40px);};
+  .recipe-summary-content { flex-wrap: wrap;}
+  .recipe-summary-text {
+  margin-left: 0px;
+  margin-top: 10px;
+  }
+  .recipe-ingredients { width: calc(100vw - 40px)};
 }
