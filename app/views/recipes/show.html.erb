@@ -24,29 +24,46 @@
       <div class="recipe-summary-card">
         <div class="item">
           <i class="fas fa-stopwatch"></i>
-          <%= @recipe.active_time %>
+          <% if @recipe.active_time.nil? %>
+            _
+          <% else %>
+            <%= @recipe.active_time %>
+          <% end %>
         </div>
         <div class="item">
           <i class="fas fa-pause-circle"></i>
-          <%= @recipe.idle_time %>
+          <% if @recipe.idle_time.nil? %>
+            _
+          <% else %>
+            <%= @recipe.idle_time %>
+          <% end %>
         </div>
         <div class="item">
           <i class="fas fa-users"></i>
-          <%= @recipe.difficulty %>
+          <% if @recipe.difficulty.nil? %>
+            _
+          <% else %>
+            <%= @recipe.difficulty %>
+          <% end %>
         </div>
         <div class="item">
           <i class="fas fa-crown"></i>
-          <%= @recipe.serving_size %>
+          <% if @recipe.serving_size.nil? %>
+            _
+          <% else %>
+            <%= @recipe.serving_size %>
+          <% end %>
         </div>
       </div>
     </div>
     <div class="recipe-content">
       <div class="recipe-ingredients">
         <h3>Ingredients</h3>
-         <p>Two apples</p>
-         <p>Two apples</p>
-         <p>Two apples</p>
-         <p>Two apples</p>
+        <ul>
+          <% @recipe.doses.each do |dose| %>
+            <li><%= "#{dose.description} #{dose.ingredient.name}" %></li>
+          <% end %>
+        </ul>
       </div>
       <div class="recipe-steps">
         <h3>Recipe</h3>
@@ -55,14 +72,27 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
       </div>
     </div>
-    <div class="container-cards-reviews">
 
+    <%= link_to "Add review", new_recipe_review_path(@recipe), class: "button button-primary " %>
+
+    <div class="container-cards-reviews">
+      <h3>Reviews</h3>
+      <% @recipe.reviews.each do |review| %>
+        <%= render "review_card", review: review %>
+      <% end %>
+    </div>
+    <div class="text-right">
+      <i class="fas fa-undo"></i>
+      <%= link_to "Back", recipes_path, class: "link-text-color " %>
     </div>
   </div>
 </div>
 
 
 
+<%# if current_user == @recipe.user %>
+  <%#= link_to "Add dose", new_recipe_dose_path(@recipe) %>
+<%# end %>
 
 
 
@@ -83,33 +113,10 @@
 
 
 
-      <div class="row">
-
-        <div class="col-12 col-md-6">
-          <h3>Ingredients</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
-          <ul>
-            <% @recipe.doses.each do |dose| %>
-              <li><%= "#{dose.description} #{dose.ingredient.name}" %></li>
-            <% end %>
-          </ul>
-          <p>
-            <% if current_user == @recipe.user %>
-              <%= link_to "Add dose", new_recipe_dose_path(@recipe) %></p>
-            <% end %>
-        </div>
-      </div>
-      <h3>Reviews</h3>
-      <% @recipe.reviews.each do |review| %>
-        <%= render "review_card", review: review %>
-      <% end %>
 
 
 
-      <%= link_to "Add review", new_recipe_review_path(@recipe) %>
-      <div class="btn btn-info">
-        <%= link_to "Back to list", recipes_path %>
-      </div>
 
-  </div>
-</div>
+
+
+

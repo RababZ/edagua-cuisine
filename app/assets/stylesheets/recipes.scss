@@ -6,7 +6,7 @@
   width: 200px;
   object-fit: cover;
   border-radius: 10px;
-  margin: 0 10px;
+  // margin: 0 10px;
 }
 
 .recipe-summary {
@@ -31,13 +31,14 @@
 
 .recipe-ingredients {
   width: 200px;
-  background-color: $green;
-  color: white;
-  border: $green 1px solid;
+  background-color: $yellow;
+  color: $green;
+  border: $yellow 1px solid;
   padding: 10px;
   order: 2;
   // flex-grow: 0;
   flex-shrink: 0;
+  margin-left: 10px;
   // position: absolute;
   // right: 10px;
   // border-radius: 5px;
@@ -46,26 +47,36 @@
 .recipe-steps {
   width: 60vw;
   text-align: justify;
+  padding: 10px 0;
 }
 
 // Large devices (desktops, 992px)
 @media(max-width: 992px){
-
+  .recipe-content {display: block};
+  .recipe-ingredients {
+    width: auto;
+    background-color: transparent;
+    border-color: transparent;
+    color: $gray;
+    padding: 0;
+    margin-left: 0;
+  }
+  .recipe-steps {
+    width: auto;
+    padding: 0;
+  }
 }
 // Medium devices (tablets, 768px)
 @media(max-width: 768px){
-  .recipe-summary { width: calc(100vw - 100px)};
-  .recipe-content {display: block};
-  .recipe-ingredients { width: calc(100vw - 100px)};
+  .recipe-summary { width: auto};
+
 }
 
 // Small devices (landscape phones, 576px)
 @media(max-width: 576px){
-  .recipe-summary { width: calc(100vw - 40px);};
   .recipe-summary-content { flex-wrap: wrap;}
   .recipe-summary-text {
   margin-left: 0px;
   margin-top: 10px;
   }
-  .recipe-ingredients { width: calc(100vw - 40px)};
 }
