@@ -10,9 +10,8 @@ class RecipesController < ApplicationController
   end
 
   def my_recipes
-    # @recipes = policy_scope(Recipe)
-    # authorize Recipe
-    # # @recipes = policy_scope(Recipe).where(user: current_user)
+    @recipes = policy_scope(Recipe).where(user: current_user)
+    authorize Recipe
   end
 
   def new
@@ -51,6 +50,7 @@ class RecipesController < ApplicationController
     @recipe.destroy
     redirect_to recipes_path
   end
+
 
   private
 

@@ -5,9 +5,9 @@ class RecipePolicy < ApplicationPolicy
     end
   end
 
-  # def my_recipes?
-  #   return true
-  # end
+  def my_recipes?
+    return true
+  end
 
   def create?
     # Anyone that is logged in can create a recipe
@@ -26,6 +26,10 @@ class RecipePolicy < ApplicationPolicy
 
   def destroy?
     user_is_owner_or_admin?
+  end
+
+  def average_rating?
+    return true
   end
 
   def user_is_owner_or_admin?

@@ -2,13 +2,23 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.05);
-  margin: 10px;;
+  margin: 10px;
 }
 
 .card-recipes > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
+}
+
+.card-recipe-link {
+  display: inherit;
+  color: inherit;
+  &:hover {
+    display: inherit;
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .card-recipes-info {

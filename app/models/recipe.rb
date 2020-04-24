@@ -11,4 +11,22 @@ class Recipe < ApplicationRecord
     in: %w[Dish Dessert Drink],
     message: 'Please insert a valid category'
   }
+
+  def average_rating
+    if self.reviews.size > 0
+        self.reviews.average(:rating)
+    else
+        0
+    end
+    # ratings = []
+    # self.reviews.each do |review|
+    #   ratings << review.rating
+    # end
+    # if ratings.length > 0
+    #   @reminder = ratings.sum.to_f % ratings.length
+    #   @average_rating = (ratings.sum / ratings.length).to_i
+    # else
+    #   @average_rating = 0
+    # end
+  end
 end
