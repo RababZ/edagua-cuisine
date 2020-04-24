@@ -1,18 +1,14 @@
+<div class="container-edaga">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+      <div class="form-login">
+        <h2>Add a new recipe</h2>
+        <%= render "form" %>
 
-<div class="page-banner">
-  <div class="container-edaga">
-    <%= simple_form_for @recipe do |f| %>
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :category %>
-      <%= f.input :active_time %>
-      <%= f.input :idle_time %>
-      <%= f.input :difficulty %>
-      <%= f.input :serving_size %>
-      <%= f.input :photo, as: :file %>
-      <%= f.button :submit, class: "btn btn-info" %>
-    <% end %>
+        <p><%= link_to "Back to list", recipes_path %></p>
+      </div>
     </div>
-    <p><%= link_to "Back to list", recipes_path %></p>
   </div>
 </div>
+
+
