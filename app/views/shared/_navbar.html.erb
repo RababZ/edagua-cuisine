@@ -21,7 +21,7 @@
             <% if current_user.photo.attached? %>
               <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", "data-toggle" => "dropdown", "aria-hospopup" => "true", "aria-expanded" => "false" %>
               <% else %>
-                <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd-e9Kn0P1AAKT-EdAiaAVUvBtRVAJqONXIL0pJ402cOAzVi0i", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", "aria-hospopup" => "true" %>
+                <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd-e9Kn0P1AAKT-EdAiaAVUvBtRVAJqONXIL0pJ402cOAzVi0i", class: "avatar" %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "My profile", profile_path, class: "dropdown-item" %>

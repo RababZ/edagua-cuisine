@@ -1,17 +1,25 @@
-<h1>my profile</h1>
-
-    <%= simple_form_for @user, url: profile_path, method: :patch do |f| %>
-    <div class="row">
-        <div class="col-xs-6">
-            <%= f.input :first_name %>
-        </div>
-        <div class="col-xs-6">
-            <%= f.input :last_name %>
-        </div>
-    </div>
-    <%= f.input :email, input_html: { autocomplete: "email" }, label_html: {class: 'pull-left'} %>
-    </div>
-    <%= f.input :photo, as: :file, required: false %>
-
-    <%= f.button :submit, class: "btn btn-info" %>
+<div class="container-edaga">
+  <div class="form-profile">
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill, class:"avatar-large" %>
+    <% else %>
+      <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd-e9Kn0P1AAKT-EdAiaAVUvBtRVAJqONXIL0pJ402cOAzVi0i", class: "avatar-large" %>
     <% end %>
+
+    <div id="profile-content">
+      <h2><%= @user.username %></h2>
+
+      <%= simple_form_for @user, url: profile_path, method: :patch do |f| %>
+
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :username %>
+        <%#= f.input :country %>
+        <%= f.input :email, input_html: { autocomplete: "email" }, label_html: {class: 'pull-left'} %>
+        <%= f.input :photo, as: :file, required: false %>
+
+        <%= f.button :submit, class: "button button-secondary" %>
+       <% end %>
+    </div>
+  </div>
+</div>

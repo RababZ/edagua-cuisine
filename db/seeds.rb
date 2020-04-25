@@ -16,7 +16,8 @@ puts "Creating users.."
 
 user = User.create(
   email: 'test@edaga.com',
-  password: '123456'
+  password: '123456',
+  username: 'Test1'
   )
 
 puts "Created #{user.email}"
