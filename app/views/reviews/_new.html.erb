@@ -1,0 +1,11 @@
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= simple_form_for [recipe, review] do |f| %>
+      <%= f.input :rating, collection: (1..5).to_a, label: "Rate this recipe" %>
+      <%= f.input :content %>
+      <%= f.submit "Submit", class: "button button-secondary" %>
+    <% end %>
+  </div>
+</div>
+

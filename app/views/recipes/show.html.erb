@@ -19,6 +19,7 @@
         <% end %>
 
         <div class="recipe-summary-text">
+          <p>by <%= @recipe.user.username %></p>
           <%= render "average_rating", recipe: @recipe %>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
         </div>
@@ -74,8 +75,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
       </div>
     </div>
-
-    <%= link_to "Add review", new_recipe_review_path(@recipe), class: "button button-primary " %>
+    <%= render "reviews/new", recipe: @recipe, review: @review %>
 
     <div class="container-cards-reviews">
       <h3>Reviews</h3>
