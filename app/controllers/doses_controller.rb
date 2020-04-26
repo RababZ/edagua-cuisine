@@ -14,7 +14,7 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to recipe_path(@recipe)
     else
-      render :new
+      redirect_to edit_recipe_path(@recipe)
     end
   end
 
