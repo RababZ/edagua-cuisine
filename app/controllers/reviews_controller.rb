@@ -12,7 +12,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to recipe_path(@recipe)
     else
-      render :new
+      flash[:alert] = "Something went wrong."
+      redirect_to recipe_path(@recipe)
     end
   end
 

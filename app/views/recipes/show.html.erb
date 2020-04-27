@@ -75,18 +75,26 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
       </div>
     </div>
+    <% if @recipe.reviews.empty? %>
+      <strong>Be the first to review this recipe</strong>
+    <% else %>
+      <strong>Rate this recipe</strong>
+    <% end %>
     <%= render "reviews/new", recipe: @recipe, review: @review %>
 
-    <div class="container-cards-reviews">
+    <% if !@recipe.reviews.empty? %>
+      <div class="container-cards-reviews">
       <h3>Reviews</h3>
       <% @recipe.reviews.each do |review| %>
         <%= render "review_card", review: review %>
       <% end %>
-    </div>
-    <div class="text-right">
-      <i class="fas fa-undo"></i>
-      <%= link_to "Back", recipes_path, class: "link-text-color " %>
-    </div>
+      </div>
+      <div class="text-right">
+        <i class="fas fa-undo"></i>
+        <%= link_to "Back", recipes_path, class: "link-text-color " %>
+      </div>
+    <% end %>
+
   </div>
 </div>
 

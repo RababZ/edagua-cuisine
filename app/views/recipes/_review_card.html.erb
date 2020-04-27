@@ -19,6 +19,6 @@
   </div>
   <p><%= review.content %></p>
   <div class="review-date">
-    <%= review.updated_at %>
+    <%= review.updated_at.strftime("%B #{review.updated_at.day.ordinalize}, %Y") %>
   </div>
 </div>
