@@ -12,6 +12,8 @@ class Recipe < ApplicationRecord
     message: 'Please insert a valid category'
   }
 
+  accepts_nested_attributes_for :doses
+
   def average_rating
     if self.reviews.size > 0
         self.reviews.average(:rating)

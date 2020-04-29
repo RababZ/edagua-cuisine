@@ -10,6 +10,14 @@
     <%= f.input :serving_size %>
     <%= f.input :steps %>
     <%= f.input :photo, as: :file %>
+
+    <!-- The form for nested model: doses -->
+    <%= f.simple_fields_for :doses do |dose| %>
+      <%= dose.input :description %>
+      <%= dose.association :ingredient, include_hidden: false %>
+    <% end %>
+
     <%= f.button :submit, class: "button button-secondary" %>
-<% end %>
   </div>
+<% end %>
+

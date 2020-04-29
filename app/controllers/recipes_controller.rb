@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     authorize @recipe
+    @recipe.doses.build
   end
 
   def create
@@ -62,6 +63,6 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :category, :description, :active_time, :idle_time, :difficulty, :serving_size, :steps, :photo)
+    params.require(:recipe).permit(:name, :category, :description, :active_time, :idle_time, :difficulty, :serving_size, :steps, :photo, doses_attributes: [:description, :ingredient_id])
   end
 end
