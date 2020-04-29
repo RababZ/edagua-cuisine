@@ -1,6 +1,7 @@
 
 <%= simple_form_for @recipe do |f| %>
   <div class="form-inputs">
+    <h4>Summary information:</h4>
     <%= f.input :name %>
     <%= f.input :category, collection: Recipe::CATEGORIES %>
     <%= f.input :description %>
@@ -8,15 +9,14 @@
     <%= f.input :idle_time %>
     <%= f.input :difficulty %>
     <%= f.input :serving_size %>
+    <h4>Steps:</h4>
     <%= f.input :steps %>
-    <%= f.input :photo, as: :file %>
-
     <!-- The form for nested model: doses -->
+    <h4>Ingredients:</h4>
     <%= f.simple_fields_for :doses do |dose| %>
-      <%= dose.input :description %>
-      <%= dose.association :ingredient, include_hidden: false %>
+      <%= render 'dose_fields', f: dose %>
     <% end %>
-
+    <%= f.input :photo, as: :file %>
     <%= f.button :submit, class: "button button-secondary" %>
   </div>
 <% end %>

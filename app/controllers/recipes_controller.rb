@@ -35,6 +35,7 @@ class RecipesController < ApplicationController
 
   def edit
     authorize @recipe
+
     # @dose = Dose.new
   end
 

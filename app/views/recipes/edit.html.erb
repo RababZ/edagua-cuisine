@@ -3,7 +3,20 @@
     <div class="col-sm-12 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
       <div class="form-login">
         <h2>Edit recipe</h2>
-          <%= render "form" %>
+          <%= simple_form_for @recipe do |f| %>
+            <div class="form-inputs">
+              <%= f.input :name %>
+              <%= f.input :category, collection: Recipe::CATEGORIES %>
+              <%= f.input :description %>
+              <%= f.input :active_time %>
+              <%= f.input :idle_time %>
+              <%= f.input :difficulty %>
+              <%= f.input :serving_size %>
+              <%= f.input :steps %>
+              <%= f.input :photo, as: :file %>
+              <%= f.button :submit, class: "button button-secondary" %>
+            </div>
+          <% end %>
           <%#= render "doses/new", recipe: @recipe, dose: @dose %>
         <p><%= link_to "Back to list", recipes_path %></p>
       </div>
