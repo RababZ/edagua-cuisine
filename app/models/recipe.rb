@@ -6,7 +6,8 @@ class Recipe < ApplicationRecord
   has_many :reviews, dependent: :destroy
   belongs_to :user
   has_one_attached :photo
-  validates :name, uniqueness: true, presence: true
+  validates :name, presence: true
+  # validates :name, uniqueness: true, presence: true
   validates :category, presence: true, inclusion: {
     in: %w[Dish Dessert Drink],
     message: 'Please insert a valid category'
