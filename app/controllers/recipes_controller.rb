@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
 
   def index
     # @recipes = policy_scope(Recipe)
-    if params[:query]
+    if params[:query] && params[:query].present?
       @recipes = policy_scope(Recipe).search_by_name_and_description(params[:query])
     else
       @recipes = policy_scope(Recipe)
