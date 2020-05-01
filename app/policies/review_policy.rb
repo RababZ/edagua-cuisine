@@ -4,9 +4,4 @@ class ReviewPolicy < ApplicationPolicy
       scope.all
     end
   end
-
-  def create
-    record.user != current_user
-  end
-
 end

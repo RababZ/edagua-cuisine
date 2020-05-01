@@ -7,15 +7,20 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    authorize @review
     @review.recipe = @recipe
     @review.user = current_user
-    if @review.save
-      redirect_to recipe_path(@recipe)
+    if @review.user != @recipe.user
+      if @review.save
+        redirect_to recipe_path(@recipe)
+      else
+        flash[:alert] = "Something went wrong"
+        redirect_to recipe_path(@recipe)
+      end
     else
-      flash[:alert] = "Something went wrong."
+      flash[:alert] = "You cannot review your own recipe"
       redirect_to recipe_path(@recipe)
     end
+
   end
 
 
