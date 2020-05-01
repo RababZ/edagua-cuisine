@@ -3,7 +3,12 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
-    @recipes = policy_scope(Recipe)
+    # @recipes = policy_scope(Recipe)
+    if params[:query]
+      @recipes = policy_scope(Recipe).search_by_name_and_description(params[:query])
+    else
+      @recipes = policy_scope(Recipe)
+    end
   end
 
   def show

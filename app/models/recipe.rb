@@ -15,21 +15,18 @@ class Recipe < ApplicationRecord
 
   accepts_nested_attributes_for :doses
 
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_description,
+    against: [ :name, :description ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   def average_rating
     if self.reviews.size > 0
         self.reviews.average(:rating)
     else
         0
     end
-    # ratings = []
-    # self.reviews.each do |review|
-    #   ratings << review.rating
-    # end
-    # if ratings.length > 0
-    #   @reminder = ratings.sum.to_f % ratings.length
-    #   @average_rating = (ratings.sum / ratings.length).to_i
-    # else
-    #   @average_rating = 0
-    # end
   end
 end

@@ -1,6 +1,18 @@
 <div class="wrapper">
   <div class="container-edaga">
     <!-- Nav tabs -->
+    <form class="form-inline my-2 my-lg-0">
+      <%= form_tag recipes_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+        class: "form-control mr-sm-2",
+        placeholder: "Find a recipe"
+      %>
+
+      <%= submit_tag "Search", class: "button button-secondary my-2" %>
+
+    <% end %>
+    </form>
     <ul class="list-inline tabs-underlined nav" role="tablist">
       <li>
         <a class="tab-underlined active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All</a>
