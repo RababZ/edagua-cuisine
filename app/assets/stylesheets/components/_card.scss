@@ -3,6 +3,7 @@
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.05);
   margin: 10px;
+  border-radius: 5px;
 }
 
 .card-recipes > img {
@@ -23,7 +24,7 @@
 
 .card-recipes-info {
   height: 70px;
-  padding: 16px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
