@@ -1,0 +1,40 @@
+.search-form {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  height: 35px;
+  padding-left: 10px;
+  width: 0;
+  outline: none;
+  border: 1px solid $light-gray;
+  border-radius: 15px;
+  // transition: all .5s;
+  align-items: flex-end;
+ &:hover {
+  box-shadow: 0 0 5px $light-gray, 0 0 5px $green;
+ }
+
+}
+
+.active {
+  width: 100%;
+}
+
+.icon {
+  background-color: $green;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: translateX(-30px);
+}
+
+

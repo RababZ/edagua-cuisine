@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="container-edaga">
-    <!-- Nav tabs -->
+    <!-- Search form -->
     <form class="form-inline my-2 my-lg-0">
       <%= form_tag recipes_path, method: :get do %>
         <%= text_field_tag :query,
@@ -13,6 +13,24 @@
 
     <% end %>
     </form>
+
+
+
+
+
+    <!-- Trying the search expand button without the submit button -->
+    <div class="search-form">
+      <%= form_tag recipes_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+        class: "search-input",
+        placeholder: "Find a recipe"
+      %>
+      <% end %>
+      <i class="fas fa-search icon"></i>
+    </div>
+
+    <!-- Nav tabs -->
     <ul class="list-inline tabs-underlined nav" role="tablist">
       <li>
         <a class="tab-underlined active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All</a>
