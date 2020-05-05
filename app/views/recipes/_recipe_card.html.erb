@@ -1,6 +1,8 @@
 <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
 
   <div class="card-recipes">
+    <%= link_to "", recipe_path(recipe), class: "card-recipe-link" %>
+
     <!-- The recipe main picture -->
 
     <% if recipe.photo.attached? %>
@@ -11,30 +13,28 @@
 
     <!-- Recipe general info - card -->
     <!-- Making the card text link to the recipe detailed page (show_page) -->
-    <%= link_to recipe_path(recipe), class: "card-recipe-link" do %>
-      <div class="card-recipes-info">
-        <div>
-          <h2><%= recipe.name %></h2>
-          <!-- Average rating of recipe -->
+    <div class="card-recipes-info">
+      <div>
+        <h2><%= recipe.name %></h2>
+        <!-- Average rating of recipe -->
 
-          <%= render "recipes/average_rating", recipe: recipe %>
+        <%= render "recipes/average_rating", recipe: recipe %>
 
-        </div>
-        <div>
-          <% if policy(recipe).edit? %>
-            <%= link_to edit_recipe_path(recipe), class: "link-fa" do %>
-              <i class="fa fa-edit"></i>
-            <% end %>
-            <%= link_to recipe_path(recipe),
-              method: :delete,
-              data: { confirm: "Are you sure?" },
-              class: "link-fa" do %>
-              <i class="fa fa-trash link-fa"></i>
-            <% end %>
-          <% end %>
-        </div>
       </div>
-    <% end %>
+      <div>
+        <% if policy(recipe).edit? %>
+          <%= link_to edit_recipe_path(recipe), class: "link-fa" do %>
+            <i class="fa fa-edit"></i>
+          <% end %>
+          <%= link_to recipe_path(recipe),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "link-fa" do %>
+            <i class="fa fa-trash link-fa"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
 
 
   </div>

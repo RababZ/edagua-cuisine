@@ -4,6 +4,7 @@
   box-shadow: 0 0 5px rgba(0,0,0,0.05);
   margin: 10px;
   border-radius: 5px;
+  position: relative;
 }
 
 .card-recipes > img {
@@ -15,6 +16,11 @@
 .card-recipe-link {
   display: inherit;
   color: inherit;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   &:hover {
     display: inherit;
     color: inherit;
@@ -28,7 +34,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
   h2 {
     font-size: 16px;
     font-weight: bold;
@@ -67,6 +72,7 @@
 }
 
 .link-fa {
+  position: relative;
   color: $green;
   &:hover {
     color: $green;
