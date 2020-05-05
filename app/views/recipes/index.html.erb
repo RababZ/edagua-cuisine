@@ -1,34 +1,18 @@
 <div class="wrapper">
   <div class="container-edaga">
+
     <!-- Search form -->
-    <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0 search-form">
       <%= form_tag recipes_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-        class: "form-control mr-sm-2",
+        class: "form-control mr-sm-2 search-input",
         placeholder: "Find a recipe"
       %>
 
       <%= submit_tag "Search", class: "button button-secondary my-2" %>
-
     <% end %>
     </form>
-
-
-
-
-
-    <!-- Trying the search expand button without the submit button -->
-    <div class="search-form">
-      <%= form_tag recipes_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-        class: "search-input",
-        placeholder: "Find a recipe"
-      %>
-      <% end %>
-      <i class="fas fa-search icon"></i>
-    </div>
 
     <!-- Nav tabs -->
     <ul class="list-inline tabs-underlined nav" role="tablist">
@@ -45,6 +29,7 @@
         <a class="tab-underlined" id="drink-tab" data-toggle="tab" href="#drink" role="tab" aria-controls="drink" aria-selected="true">Drink</a>
       </li>
     </ul>
+
     <!-- Tab panes -->
     <div class="tab-content">
       <div class="tab-pane active" id="all" role="tabpanel" aria-labelledby="all-tab">

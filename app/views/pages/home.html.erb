@@ -6,17 +6,17 @@
         <h1>THE PERFECT RECIPE</h1>
         <p>That will keep you busy during the #Stayhome days. Oh! And that will draw a smile on your beautiful face!</p>
         <!-- Search form -->
-        <div class="form-inline my-2 my-lg-0r">
-          <%= form_tag recipes_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-            class: "form-control mr-sm-2",
-            placeholder: "Find a recipe"
+          <form class="form-inline my-2 my-lg-0 search-form">
+            <%= form_tag recipes_path, method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+              class: "form-control mr-sm-2 search-input",
+              placeholder: "Find a recipe"
             %>
 
             <%= submit_tag "Search", class: "button button-secondary my-2" %>
           <% end %>
-        </div>
+          </form>
 
         <%= link_to "See all our recipes >>",  recipes_path, class: "link-text-color" %>
       </div>

@@ -1,10 +1,13 @@
-.search-form {
+// Search form in the navbar
+
+.search-form-navbar {
   display: flex;
-  // justify-content: center;
   align-items: center;
+  transform: translateX(+30px);
+  margin-bottom: 0 !important;
 }
 
-.search-input {
+.search-input-navbar {
   height: 35px;
   padding-left: 10px;
   width: 0;
@@ -16,12 +19,9 @@
  &:hover {
   box-shadow: 0 0 5px $light-gray, 0 0 5px $green;
  }
-
 }
 
-.active {
-  width: 100%;
-}
+.active { width: 100% ;}
 
 .icon {
   background-color: $green;
@@ -36,5 +36,17 @@
   cursor: pointer;
   transform: translateX(-30px);
 }
+
+// Search form in page
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-input {
+  flex-grow: 1;
+}
+
 
 

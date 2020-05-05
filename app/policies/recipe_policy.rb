@@ -21,20 +21,24 @@ class RecipePolicy < ApplicationPolicy
 
   def update?
     # User can edit and update if he/she create the recipe
-    user_is_owner_or_admin?
+    user_is_owner?
   end
 
   def destroy?
-    user_is_owner_or_admin?
+    user_is_owner?
   end
 
   def average_rating?
     return true
   end
 
-  def user_is_owner_or_admin?
+  def user_is_owner?
     record.user == user
-    record.user == user || user.admin
   end
+
+
+  # def user_is_owner_or_admin?
+  #   record.user == user || user.admin
+  # end
 
 end
