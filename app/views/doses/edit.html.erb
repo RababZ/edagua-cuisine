@@ -4,8 +4,8 @@
       <div class="form-login">
         <h2>Add ingredient</h2>
         <%= simple_form_for @dose, html: {class: 'form-inline'} do |f| %>
-          <%= f.input :description, label: "Quantity" %>
-          <%#= f.association :ingredient, include_hidden: false %>
+          <%= f.input :quantity, label: "Quantity" %>
+          <%= f.input :name, label: "Ingredient" %>
           <%= f.button :submit, class: "button button-secondary" %>
         <% end %>
       </div>
