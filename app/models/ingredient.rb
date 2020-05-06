@@ -1,5 +1,4 @@
-class Dose < ApplicationRecord
-  # belongs_to :ingredient
+class Ingredient < ApplicationRecord
   belongs_to :recipe
   # validates :recipe, uniqueness: { scope: :ingredient }
   validates :quantity, presence: true

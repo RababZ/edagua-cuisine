@@ -1,20 +1,20 @@
-class DosesController < ApplicationController
+class StepsController < ApplicationController
 
   before_action :set_recipe, only: [:new, :create]
-  before_action :set_dose, only: [:edit, :update, :destroy]
+  before_action :set_step, only: [:edit, :update, :destroy]
 
 
 
   def new
-    @dose = Dose.new
-    authorize @dose
+    @step = Step.new
+    authorize @step
   end
 
   def create
-    @dose = Dose.new(dose_params)
-    @dose.recipe = @recipe
-    authorize @dose
-    if @dose.save
+    @step = Step.new(step_params)
+    @step.recipe = @recipe
+    authorize @step
+    if @step.save
       redirect_to recipe_path(@recipe)
     else
       # redirect_to edit_recipe_path(@recipe)
@@ -26,19 +26,19 @@ class DosesController < ApplicationController
   end
 
   def update
-    authorize @dose
+    authorize @step
     # @recipe.update(recipe_params)
-    if @dose.update(dose_params)
-      redirect_to recipe_path(@dose.recipe_id)
+    if @step.update(step_params)
+      redirect_to recipe_path(@step.recipe_id)
     else
       render :edit
     end
   end
 
   def destroy
-    authorize @dose
-    @recipe = @dose.recipe
-    @dose.destroy
+    authorize @step
+    @recipe = @step.recipe
+    @step.destroy
     redirect_to recipe_path(@recipe)
   end
 
@@ -50,13 +50,13 @@ class DosesController < ApplicationController
     authorize @recipe
   end
 
-  def set_dose
+  def set_step
     # @recipe = Recipe.find(params[:recipe_id])
-    @dose = policy_scope(Dose).find(params[:id])
-    authorize @dose
+    @step = policy_scope(Step).find(params[:id])
+    authorize @step
   end
 
-  def dose_params
-    params.require(:dose).permit(:quantity, :name)
+  def step_params
+    params.require(:step).permit(:quantity, :name)
   end
 end

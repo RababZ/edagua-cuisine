@@ -11,10 +11,10 @@
     <%= f.input :serving_size %>
     <h4>Steps:</h4>
     <%= f.input :steps %>
-    <!-- The form for nested model: doses -->
+    <!-- The form for nested model: ingredient -->
     <h4>Ingredients:</h4>
-    <%= f.simple_fields_for :doses do |dose| %>
-      <%= render 'dose_fields', f: dose %>
+    <%= f.simple_fields_for :ingredients do |ingredient| %>
+      <%= render 'ingredient_fields', f: ingredient %>
     <% end %>
     <%= f.input :photo, as: :file %>
     <%= f.button :submit, class: "button button-secondary" %>

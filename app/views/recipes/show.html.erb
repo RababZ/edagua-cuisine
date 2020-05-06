@@ -64,16 +64,16 @@
 
         <h3>Ingredients</h3>
 
-        <% @recipe.doses.each do |dose| %>
+        <% @recipe.ingredients.each do |ingredient| %>
           <div class="d-flex justify-content-between">
-            <%= "#{dose.quantity} #{dose.name}" %>
+            <%= "#{ingredient.quantity} #{ingredient.name}" %>
             <div>
               <% if policy(@recipe).edit? %>
-                <%= link_to edit_dose_path(dose), class: "link-fa " do %>
+                <%= link_to edit_ingredient_path(ingredient), class: "link-fa " do %>
                   <i class="fa fa-edit"></i>
                 <% end %>
 
-                <%= link_to dose_path(dose),
+                <%= link_to ingredient_path(ingredient),
                 method: :delete,
                 data: { confirm: "Are you sure?" },
                 class: "link-fa" do %>
@@ -84,7 +84,7 @@
           </div>
         <% end %>
         <% if policy(@recipe).edit? %>
-          <%= link_to new_recipe_dose_path(@recipe), class: "link-fa " do %>
+          <%= link_to new_recipe_ingredient_path(@recipe), class: "link-fa " do %>
             <i class="fas fa-plus-circle"></i>
           <% end %>
         <% end %>

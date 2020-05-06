@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   get "profile", to: 'pages#profile'
   patch "profile", to: "pages#profile_update"
   resources :recipes do
-    resources :doses, only: [:new, :create]
+    resources :ingredients, only: [:new, :create]
+    resources :steps, only: [:new, :create]
     resources :reviews, only: [:new, :create]
   end
-  resources :doses, only: [:edit, :update, :destroy]
+  resources :ingredients, only: [:edit, :update, :destroy]
+  resources :steps, only: [:edit, :update, :destroy]
 end

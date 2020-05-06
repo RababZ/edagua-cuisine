@@ -3,7 +3,6 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @recipes = policy_scope(Recipe)
     if params[:query] && params[:query].present?
       @recipes = policy_scope(Recipe).search_by_name_and_description(params[:query])
     else
@@ -23,14 +22,13 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     authorize @recipe
-    @recipe.doses.build
+    @recipe.ingredients.build
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     authorize @recipe
-    # @recipe.save
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
@@ -40,8 +38,6 @@ class RecipesController < ApplicationController
 
   def edit
     authorize @recipe
-
-    # @dose = Dose.new
   end
 
   def update
@@ -69,6 +65,6 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :category, :description, :active_time, :idle_time, :difficulty, :serving_size, :steps, :photo, doses_attributes: [:quantity, :name])
+    params.require(:recipe).permit(:name, :category, :description, :active_time, :idle_time, :difficulty, :serving_size, :steps, :photo, ingredients_attributes: [:quantity, :name])
   end
 end

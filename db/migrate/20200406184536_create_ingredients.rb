@@ -1,6 +1,6 @@
-class CreateDoses < ActiveRecord::Migration[6.0]
+class CreateIngredients < ActiveRecord::Migration[6.0]
   def change
-    create_table :doses do |t|
+    create_table :ingredients do |t|
       t.string :description
       t.references :recipe, null: false, foreign_key: true
 

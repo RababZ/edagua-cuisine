@@ -1,8 +1,8 @@
 class Recipe < ApplicationRecord
   CATEGORIES = ['Dish', 'Dessert','Drink']
 
-  has_many :doses, dependent: :destroy
-  # has_many :ingredients, through: :doses
+  has_many :ingredients, dependent: :destroy
+  has_many :steps, dependent: :destroy
   has_many :reviews, dependent: :destroy
   belongs_to :user
   has_one_attached :photo
@@ -13,7 +13,7 @@ class Recipe < ApplicationRecord
     message: 'Please insert a valid category'
   }
 
-  accepts_nested_attributes_for :doses
+  accepts_nested_attributes_for :ingredients
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_description,

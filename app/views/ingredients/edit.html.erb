@@ -3,7 +3,7 @@
     <div class="col-sm-12 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
       <div class="form-login">
         <h2>Add ingredient</h2>
-        <%= simple_form_for @dose, html: {class: 'form-inline'} do |f| %>
+        <%= simple_form_for @ingredient, html: {class: 'form-inline'} do |f| %>
           <%= f.input :quantity, label: "Quantity" %>
           <%= f.input :name, label: "Ingredient" %>
           <%= f.button :submit, class: "button button-secondary" %>
