@@ -2,7 +2,7 @@ class Recipe < ApplicationRecord
   CATEGORIES = ['Dish', 'Dessert','Drink']
 
   has_many :doses, dependent: :destroy
-  has_many :ingredients, through: :doses
+  # has_many :ingredients, through: :doses
   has_many :reviews, dependent: :destroy
   belongs_to :user
   has_one_attached :photo

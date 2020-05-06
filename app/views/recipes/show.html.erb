@@ -66,7 +66,8 @@
 
         <% @recipe.doses.each do |dose| %>
           <div class="d-flex justify-content-between">
-            <%= "#{dose.description} #{dose.ingredient.name}" %>
+            <%= dose.description %>
+            <%#= "#{dose.description} #{dose.ingredient.name}" %>
             <div>
               <% if policy(@recipe).edit? %>
                 <%= link_to edit_dose_path(dose), class: "link-fa " do %>
