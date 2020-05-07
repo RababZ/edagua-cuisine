@@ -13,7 +13,9 @@ class Recipe < ApplicationRecord
     message: 'Please insert a valid category'
   }
 
-  accepts_nested_attributes_for :ingredients
+  accepts_nested_attributes_for :ingredients,
+                                allow_destroy: true,
+                                # reject_if: proc { |att| att['name'].blank? }
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_description,
