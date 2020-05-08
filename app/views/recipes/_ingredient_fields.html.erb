@@ -1,2 +1,5 @@
-<%= f.input :quantity, label: "Quantity" %>
-<%= f.input :name, label: "Ingredient" %>
+<div class='nested-fields'>
+  <%= f.input :quantity, label: "Quantity" %>
+  <%= f.input :name, label: "Ingredient" %>
+  <%= link_to_remove_association "remove ingredient", f %>
+</div>

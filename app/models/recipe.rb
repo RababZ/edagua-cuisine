@@ -15,7 +15,11 @@ class Recipe < ApplicationRecord
 
   accepts_nested_attributes_for :ingredients,
                                 allow_destroy: true,
-                                # reject_if: proc { |att| att['name'].blank? }
+                                reject_if: :all_blank
+
+  accepts_nested_attributes_for :steps,
+                                allow_destroy: true,
+                                reject_if: :all_blank
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_description,
