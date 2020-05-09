@@ -1,5 +1,17 @@
 <div class='nested-fields'>
-  <%= f.input :quantity, label: "Quantity" %>
-  <%= f.input :name, label: "Ingredient" %>
-  <%= link_to_remove_association "remove ingredient", f %>
+  <div class="row" style="margin: auto">
+    <div class="col-4" style="padding-left: 0">
+      <%= f.input :quantity, label: false, placeholder: "Quantity" %>
+    </div>
+    <div class="col-7" style="padding-left: 0">
+      <%= f.input :name, label: false, placeholder: "Ingedient" %>
+    </div>
+    <div class="col-1" style="padding-left: 0">
+      <%= link_to_remove_association "delete", f %>
+    </div>
+
+
+
+  </div>
 </div>
+

@@ -22,7 +22,8 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     authorize @recipe
-    # @recipe.ingredients.build
+    @recipe.ingredients.build
+    @recipe.steps.build
   end
 
   def create

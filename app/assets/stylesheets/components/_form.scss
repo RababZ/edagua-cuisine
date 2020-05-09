@@ -72,3 +72,10 @@
   }
 }
 
+// Add recipe form
+
+.ingredients-form {
+  ::placeholder {
+    color: $light-gray;
+  }
+}

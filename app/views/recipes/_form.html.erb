@@ -9,24 +9,26 @@
     <%= f.input :idle_time %>
     <%= f.input :difficulty %>
     <%= f.input :serving_size %>
-    <h4>Steps:</h4>
-    <!-- The form for nested model: step -->
-    <div class="steps">
-      <%= f.simple_fields_for :steps do |step| %>
-        <%= render 'step_fields', f: step %>
-      <% end %>
-      <div class="links">
-        <%= link_to_add_association 'add step', f, :steps %>
-      </div>
-    </div>
+
     <!-- The form for nested model: ingredient -->
-    <h4>Ingredients:</h4>
-    <div class="ingredients">
+    <div class="ingredients-form">
+      <h4>Ingredients:</h4>
       <%= f.simple_fields_for :ingredients do |ingredient| %>
         <%= render 'ingredient_fields', f: ingredient %>
       <% end %>
       <div class="links">
         <%= link_to_add_association 'add ingredient', f, :ingredients %>
+      </div>
+    </div>
+
+    <!-- The form for nested model: step -->
+    <div class="steps-form">
+      <h4>Steps:</h4>
+      <%= f.simple_fields_for :steps do |step| %>
+        <%= render 'step_fields', f: step %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association 'add step', f, :steps %>
       </div>
     </div>
     <%= f.input :photo, as: :file %>
