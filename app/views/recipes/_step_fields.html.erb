@@ -1,5 +1,14 @@
 <div class='nested-fields'>
-  <%= f.input :step_number, label: "Step number" %>
-  <%= f.input :description, label: "description" %>
-  <%= link_to_remove_association "remove step", f %>
+  <div class="row" style="margin: auto">
+    <div class="col-4" style="padding-left: 0">
+      <%= f.input :step_number, label: false, placeholder: "Step number" %>
+    </div>
+    <div class="col-7" style="padding-left: 0">
+      <%= f.input :description, label: false, placeholder:  "description" %>
+    </div>
+    <div class="col-1" style="padding-left: 0">
+      <%= link_to_remove_association button_tag('x', type: "button", class: "close"), f %>
+      <%#= link_to_remove_association "remove step", f %>
+    </div>
+  </div>
 </div>

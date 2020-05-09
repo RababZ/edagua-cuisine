@@ -7,11 +7,9 @@
       <%= f.input :name, label: false, placeholder: "Ingedient" %>
     </div>
     <div class="col-1" style="padding-left: 0">
-      <%= link_to_remove_association "delete", f %>
+      <%= link_to_remove_association button_tag('x', type: "button", class: "close"), f %>
+      <%#= link_to_remove_association "delete", f %>
     </div>
-
-
-
   </div>
 </div>
 
