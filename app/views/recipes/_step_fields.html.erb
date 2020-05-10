@@ -1,10 +1,7 @@
 <div class='nested-fields'>
   <div class="row" style="margin: auto">
-    <div class="col-4" style="padding-left: 0">
-      <%= f.input :step_number, label: false, placeholder: "Step number" %>
-    </div>
-    <div class="col-7" style="padding-left: 0">
-      <%= f.input :description, label: false, placeholder:  "description" %>
+    <div class="col-11" style="padding-left: 0">
+      <%= f.input :description, label: false, placeholder:  "Step description" %>
     </div>
     <div class="col-1" style="padding-left: 0">
       <%= link_to_remove_association button_tag('x', type: "button", class: "close"), f %>

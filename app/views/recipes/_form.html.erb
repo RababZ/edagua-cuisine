@@ -5,8 +5,14 @@
     <%= f.input :name %>
     <%= f.input :category, collection: Recipe::CATEGORIES %>
     <%= f.input :description %>
-    <%= f.input :active_time %>
-    <%= f.input :idle_time %>
+    <div class="row" style="margin: auto">
+      <div class="col-md-6" style="padding-left: 0">
+        <%= f.input :active_time %>
+      </div>
+       <div class="col-md-6" style="padding-left: 0">
+        <%= f.input :idle_time %>
+      </div>
+    </div>
     <%= f.input :difficulty %>
     <%= f.input :serving_size %>
 

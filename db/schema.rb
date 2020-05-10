@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_203008) do
+ActiveRecord::Schema.define(version: 2020_05_10_131931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(version: 2020_05_06_203008) do
   end
 
   create_table "steps", force: :cascade do |t|
-    t.integer "step_number"
     t.text "description"
     t.bigint "recipe_id", null: false
     t.index ["recipe_id"], name: "index_steps_on_recipe_id"

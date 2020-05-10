@@ -70,7 +70,7 @@ class RecipesController < ApplicationController
           .permit(
             :name, :category, :description, :active_time, :idle_time, :difficulty, :serving_size, :steps, :photo,
             ingredients_attributes: [:id, :quantity, :name, :_destroy],
-            steps_attributes: [:id, :step_number, :description, :_destroy]
+            steps_attributes: [:id, :description, :_destroy]
             )
   end
 end
