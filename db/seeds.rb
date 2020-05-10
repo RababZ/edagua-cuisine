@@ -29,6 +29,7 @@ puts 'Creating dish recipes...'
   recipe = Recipe.create!(
     name: Faker::Food.dish,
     category: 'Dish',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
     user: user1
   )
   puts "Created #{recipe.name} #{recipe.user.email}"
@@ -39,6 +40,7 @@ puts 'Creating dessert recipes...'
   recipe = Recipe.create!(
     name: Faker::Dessert.variety,
     category: 'Dessert',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
     user: user1
   )
   puts "Created #{recipe.name}"
@@ -49,6 +51,7 @@ puts 'Creating drink recipes...'
   recipe = Recipe.create!(
     name: Faker::Coffee.blend_name,
     category: 'Drink',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
     user: user1
   )
   puts "Created #{recipe.name}"

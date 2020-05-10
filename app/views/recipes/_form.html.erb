@@ -1,21 +1,23 @@
-
 <%= simple_form_for @recipe do |f| %>
   <div class="form-inputs">
-    <h4>Summary information:</h4>
-    <%= f.input :name %>
-    <%= f.input :category, collection: Recipe::CATEGORIES %>
-    <%= f.input :description %>
-    <div class="row" style="margin: auto">
-      <div class="col-md-6" style="padding-left: 0">
-        <%= f.input :active_time %>
+    <div class="summary-form">
+      <h4>Summary information:</h4>
+      <%= f.input :name %>
+      <%= f.input :category, collection: Recipe::CATEGORIES %>
+      <%= f.input :description %>
+      <div class="row" style="margin: auto">
+        <div class="col-md-6" style="padding-left: 0">
+          <%= f.input :active_time %>
+        </div>
+         <div class="col-md-6" style="padding-left: 0">
+          <%= f.input :idle_time %>
+        </div>
       </div>
-       <div class="col-md-6" style="padding-left: 0">
-        <%= f.input :idle_time %>
-      </div>
+      <%= f.input :difficulty %>
+      <%= f.input :serving_size %>
+      <%= f.input :photo, as: :file, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: 'Attach a photo 📎' %>
+      <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
     </div>
-    <%= f.input :difficulty %>
-    <%= f.input :serving_size %>
-
     <!-- The form for nested model: ingredient -->
     <div class="ingredients-form">
       <h4>Ingredients:</h4>
@@ -23,7 +25,8 @@
         <%= render 'ingredient_fields', f: ingredient %>
       <% end %>
       <div class="links">
-        <%= link_to_add_association 'add ingredient', f, :ingredients %>
+        <%= link_to_add_association button_tag('+', type: "button", class: "add"), f, :ingredients %>
+        <%= link_to_add_association 'Add ingredient', f, :ingredients %>
       </div>
     </div>
 
@@ -34,10 +37,11 @@
         <%= render 'step_fields', f: step %>
       <% end %>
       <div class="links">
-        <%= link_to_add_association 'add step', f, :steps %>
+        <%= link_to_add_association button_tag('+', type: "button", class: "add"), f, :steps %>
+        <%= link_to_add_association 'Add step', f, :steps %>
       </div>
     </div>
-    <%= f.input :photo, as: :file %>
+
     <%= f.button :submit, class: "button button-secondary" %>
   </div>
 <% end %>

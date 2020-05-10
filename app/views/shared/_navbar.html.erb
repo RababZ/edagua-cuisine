@@ -12,16 +12,16 @@
         <!-- If user is signed in -->
 
         <!-- Trying the search expand button without the submit button -->
-        <div class="search-form-navbar form-group">
-          <%= form_tag recipes_path, method: :get do %>
-            <%= text_field_tag :query,
+        <!-- <div class="search-form-navbar form-group">
+          <%#= form_tag recipes_path, method: :get do %>
+            <%#= text_field_tag :query,
               params[:query],
             class: "search-input-navbar",
             placeholder: "Find a recipe"
           %>
-          <% end %>
+          <%# end %>
           <i class="fas fa-search icon"></i>
-        </div>
+        </div> -->
         <% if user_signed_in? %>
           <div class="nav-item navbar-right-item navbar-right-links">
             <%= link_to "Add recipe", new_recipe_path, class: "button button-primary " %>

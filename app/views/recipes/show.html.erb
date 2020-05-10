@@ -21,7 +21,7 @@
         <div class="recipe-summary-text">
           <p>by <%= @recipe.user.username %></p>
           <%= render "average_rating", recipe: @recipe %>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
+          <p><%= @recipe.description %></p>
         </div>
       </div>
       <div class="recipe-summary-card">
@@ -67,36 +67,40 @@
         <% @recipe.ingredients.each do |ingredient| %>
           <div class="d-flex justify-content-between">
             <%= "#{ingredient.quantity} #{ingredient.name}" %>
-            <div>
-              <% if policy(@recipe).edit? %>
-                <%= link_to edit_ingredient_path(ingredient), class: "link-fa " do %>
+            <!-- <div>
+              <%# if policy(@recipe).edit? %>
+                <%#= link_to edit_ingredient_path(ingredient), class: "link-fa " do %>
                   <i class="fa fa-edit"></i>
-                <% end %>
+                <%# end %>
 
-                <%= link_to ingredient_path(ingredient),
+                <%#= link_to ingredient_path(ingredient),
                 method: :delete,
                 data: { confirm: "Are you sure?" },
                 class: "link-fa" do %>
                   <i class="fa fa-trash link-fa"></i>
-                <% end %>
-              <% end %>
-            </div>
+                <%# end %>
+              <%# end %>
+            </div> -->
           </div>
         <% end %>
-        <% if policy(@recipe).edit? %>
-          <%= link_to new_recipe_ingredient_path(@recipe), class: "link-fa " do %>
-            <i class="fas fa-plus-circle"></i>
-          <% end %>
-        <% end %>
+        <%# if policy(@recipe).edit? %>
+          <%#= link_to new_recipe_ingredient_path(@recipe), class: "link-fa " do %>
+            <!-- <i class="fas fa-plus-circle"></i> -->
+          <%# end %>
+        <%# end %>
 
       </div>
       <div class="recipe-steps">
-        <h3>Step-by-step</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit.</p>
-        <p> Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.</p>
+        <h3>Directions</h3>
+        <% step_number = 0 %>
+        <% @recipe.steps.each do |step| %>
+          <% step_number += 1 %>
+          <h5><%= "Step #{step_number}" %></h5>
+          <p><%= step.description %></p>
+        <% end %>
       </div>
     </div>
+
     <% if @recipe.reviews.empty? %>
       <strong>Be the first to review this recipe</strong>
     <% else %>
