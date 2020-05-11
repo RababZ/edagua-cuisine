@@ -6,7 +6,7 @@
         <h1>THE PERFECT RECIPE</h1>
         <p>That will keep you busy during the #Stayhome days. Oh! And that will draw a smile on your beautiful face!</p>
         <!-- Search form -->
-          <form class="form-inline my-2 my-lg-0 search-form">
+          <div class="form-inline my-2 my-lg-0 search-form">
             <%= form_tag recipes_path, method: :get do %>
               <%= text_field_tag :query,
                 params[:query],
@@ -16,7 +16,7 @@
 
             <%= submit_tag "Search", class: "button button-secondary my-2" %>
           <% end %>
-          </form>
+          </div>
 
         <%= link_to "See all our recipes >>",  recipes_path, class: "link-text-color" %>
       </div>
