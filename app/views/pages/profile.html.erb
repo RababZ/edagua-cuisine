@@ -1,7 +1,7 @@
 <div class="container-edaga">
   <div class="form-profile">
     <% if @user.photo.attached? %>
-      <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill, class:"avatar-large" %>
+      <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill, class: " avatar-large" %>
     <% else %>
       <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd-e9Kn0P1AAKT-EdAiaAVUvBtRVAJqONXIL0pJ402cOAzVi0i", class: "avatar-large" %>
     <% end %>

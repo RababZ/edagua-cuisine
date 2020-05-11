@@ -13,7 +13,7 @@
       </div>
       <div class="recipe-summary-content">
         <% if @recipe.photo.attached? %>
-          <%= cl_image_tag @recipe.photo.key, height: 200, width: 200, crop: :fill, radius: 10 %>
+          <%= cl_image_tag @recipe.photo.key, height: 200, width: 200, crop: :fill, radius: 10, class: "avatar" %>
         <% else %>
           <img src="https://images.unsplash.com/photo-1517314687957-13af800de1c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" class="photo-food-md"/>
         <% end %>
