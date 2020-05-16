@@ -27,4 +27,4 @@ const expandOnClick = () => {
 // searchBtn.addEventListener("click", expand)
 // };
 
-export { expandOnClick };
+// export { expandOnClick };

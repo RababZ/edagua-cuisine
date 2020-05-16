@@ -20,13 +20,13 @@ import "cocoon";
 import 'bootstrap';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { initStarRating } from '../plugins/init_star_rating';
-import { expandOnClick } from '../components/search';
+// import { expandOnClick } from '../components/search';
 import { previewImageOnFileSelect } from '../components/photo_preview'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
   initStarRating();
-  expandOnClick();
+  // expandOnClick();
   previewImageOnFileSelect();
 });
