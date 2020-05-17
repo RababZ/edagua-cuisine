@@ -11,14 +11,14 @@
 
       <%= simple_form_for @user, url: profile_path, method: :patch do |f| %>
 
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :username %>
+        <%= f.input :username, label: "Pseudonyme" %>
+        <%= f.input :first_name, label: "Prénom" %>
+        <%= f.input :last_name, label: "Nom" %>
         <%#= f.input :country %>
-        <%= f.input :email, input_html: { autocomplete: "email" }, label_html: {class: 'pull-left'} %>
+        <%= f.input :email, input_html: { autocomplete: "email" }, label_html: {class: 'pull-left'}, label: "E-mail" %>
         <%= f.input :photo, as: :file, required: false %>
 
-        <%= f.button :submit, class: "button button-secondary" %>
+        <%= f.submit "Actualiser", class: "button button-secondary" %>
        <% end %>
     </div>
   </div>

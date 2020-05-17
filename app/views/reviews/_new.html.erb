@@ -4,7 +4,7 @@
     <%= simple_form_for [recipe, review] do |f| %>
       <%= f.input :rating, collection: (1..5).to_a, label: false %>
       <%= f.input :content, label: false %>
-      <%= f.submit "Submit", class: "button button-secondary" %>
+      <%= f.submit "Confirmer", class: "button button-secondary" %>
     <% end %>
   </div>
 </div>

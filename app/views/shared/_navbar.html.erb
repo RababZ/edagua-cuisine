@@ -40,9 +40,9 @@
 
           <!-- Dropdown items -->
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Mes recettes", my_recipes_path , class: "dropdown-item" %>
             <%= link_to "Proposer une recette", new_recipe_path, class: "dropdown-item" %>
             <%= link_to "Mon profil", profile_path, class: "dropdown-item" %>
-            <%= link_to "Mes recettes", my_recipes_path , class: "dropdown-item" %>
             <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </div>
