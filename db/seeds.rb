@@ -25,34 +25,62 @@ user2 = User.create(
 puts "Created #{user2.email}"
 
 puts 'Creating dish recipes...'
-10.times do
-  recipe = Recipe.create!(
-    name: Faker::Food.dish,
-    category: 'Dish',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
-    user: user1
-  )
-  puts "Created #{recipe.name} #{recipe.user.email}"
-end
 
-puts 'Creating dessert recipes...'
-10.times do
-  recipe = Recipe.create!(
-    name: Faker::Dessert.variety,
-    category: 'Dessert',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
-    user: user1
-  )
-  puts "Created #{recipe.name}"
-end
+tajine = Recipe.create!(
+  user: user1,
+  name: 'Tajine aux pruneaux',
+  category: 'Plat',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
+  active_time: '1 h 30 min',
+  idle_time: '_',
+  difficulty: 'Facile',
+  serving_size: 5,
+  ingredients_attributes: [
+    {
+      quantity: "2",
+      name: "tomates"
+    },
+    {
+      quantity: "2",
+      name: "oignons"
+    }
+  ],
+  steps_attributes: [
+    { description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.' },
+    { description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.' },
+    { description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.' }
+  ]
+)
+puts "Created #{tajine.name}"
 
-puts 'Creating drink recipes...'
-10.times do
-  recipe = Recipe.create!(
-    name: Faker::Coffee.blend_name,
-    category: 'Drink',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
-    user: user1
-  )
-  puts "Created #{recipe.name}"
-end
+# 10.times do
+#   recipe = Recipe.create!(
+#     name: Faker::Food.dish,
+#     category: 'Dish',
+#     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
+#     user: user1
+#   )
+#   puts "Created #{recipe.name} #{recipe.user.email}"
+# end
+
+# puts 'Creating dessert recipes...'
+# 10.times do
+#   recipe = Recipe.create!(
+#     name: Faker::Dessert.variety,
+#     category: 'Dessert',
+#     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
+#     user: user1
+#   )
+#   puts "Created #{recipe.name}"
+# end
+
+# puts 'Creating drink recipes...'
+# 10.times do
+#   recipe = Recipe.create!(
+#     name: Faker::Coffee.blend_name,
+#     category: 'Drink',
+#     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
+#     user: user1
+#   )
+#   puts "Created #{recipe.name}"
+# end

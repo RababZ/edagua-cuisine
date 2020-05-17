@@ -2,46 +2,46 @@
   <div class="container-edaga">
 
     <!-- Search form -->
-    <form class="form-inline my-2 my-lg-0 search-form">
-      <%= form_tag recipes_path, method: :get do %>
-        <%= text_field_tag :query,
+<!--     <form class="form-inline my-2 my-lg-0 search-form">
+      <%#= form_tag recipes_path, method: :get do %>
+        <%#= text_field_tag :query,
           params[:query],
         class: "form-control mr-sm-2 search-input",
         placeholder: "Find a recipe"
       %>
 
-      <%= submit_tag "Search", class: "button button-secondary my-2" %>
-    <% end %>
-    </form>
+      <%#= submit_tag "Search", class: "button button-secondary my-2" %>
+    <%# end %>
+    </form> -->
 
     <!-- Nav tabs -->
     <ul class="list-inline tabs-underlined nav" role="tablist">
+   <!--    <li>
+        <a class="tab-underlined active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">Toutes nos recettes</a>
+      </li> -->
       <li>
-        <a class="tab-underlined active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All</a>
+        <a class="tab-underlined active" id="dish-tab" data-toggle="tab" href="#dish" role="tab" aria-controls="dish" aria-selected="true">Plats</a>
       </li>
       <li>
-        <a class="tab-underlined" id="dish-tab" data-toggle="tab" href="#dish" role="tab" aria-controls="dish" aria-selected="true">Dish</a>
+        <a class="tab-underlined" id="dessert-tab" data-toggle="tab" href="#dessert" role="tab" aria-controls="dessert" aria-selected="true">Desserts</a>
       </li>
       <li>
-        <a class="tab-underlined" id="dessert-tab" data-toggle="tab" href="#dessert" role="tab" aria-controls="dessert" aria-selected="true">Dessert</a>
-      </li>
-      <li>
-        <a class="tab-underlined" id="drink-tab" data-toggle="tab" href="#drink" role="tab" aria-controls="drink" aria-selected="true">Drink</a>
+        <a class="tab-underlined" id="drink-tab" data-toggle="tab" href="#drink" role="tab" aria-controls="drink" aria-selected="true">Boissons</a>
       </li>
     </ul>
 
     <!-- Tab panes -->
     <div class="tab-content">
-      <div class="tab-pane active" id="all" role="tabpanel" aria-labelledby="all-tab">
+     <!--  <div class="tab-pane active" id="all" role="tabpanel" aria-labelledby="all-tab">
         <div class="row">
-          <% @recipes.each do |recipe| %>
-            <%= render "recipe_card", recipe: recipe %>
-          <% end %>
+          <%# @recipes.each do |recipe| %>
+            <%#= render "recipe_card", recipe: recipe %>
+          <%# end %>
         </div>
-      </div>
-      <div class="tab-pane fade" id="dish" role="tabpanel" aria-labelledby="dish-tab">
+      </div> -->
+      <div class="tab-pane fade show active" id="dish" role="tabpanel" aria-labelledby="dish-tab">
         <div class="row">
-          <% @recipes.where(category: "Dish").each do |recipe| %>
+          <% @recipes.where(category: "Plat").each do |recipe| %>
             <%= render "recipe_card", recipe: recipe %>
           <% end %>
         </div>
@@ -55,7 +55,7 @@
       </div>
       <div class="tab-pane fade" id="drink" role="tabpanel" aria-labelledby="drink-tab">
         <div class="row">
-          <% @recipes.where(category: "Drink").each do |recipe| %>
+          <% @recipes.where(category: "Boisson").each do |recipe| %>
             <%= render "recipe_card", recipe: recipe %>
           <% end %>
         </div>

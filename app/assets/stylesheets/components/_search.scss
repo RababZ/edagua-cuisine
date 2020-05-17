@@ -47,8 +47,13 @@
 }
 
 @media(min-width: 576px){
-  .search-input-navbar { width: 280px;}
+  .search-input-navbar { width: 260px;}
 }
+
+@media(max-width: 575px){
+  .search-input-navbar { width: 200px;}
+}
+
 
 
 // Search form in page
