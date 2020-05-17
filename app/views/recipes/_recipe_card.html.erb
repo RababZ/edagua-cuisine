@@ -1,41 +1,36 @@
-<div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+<div class="card-recipes">
+  <%= link_to "", recipe_path(recipe), class: "card-recipe-link" %>
 
-  <div class="card-recipes">
-    <%= link_to "", recipe_path(recipe), class: "card-recipe-link" %>
+  <!-- The recipe main picture -->
 
-    <!-- The recipe main picture -->
+  <% if recipe.photo.attached? %>
+    <%= cl_image_tag recipe.photo.key, height: 200, width: 400, crop: :fill, class: "" %>
+  <% else %>
+    <img src="https://images.unsplash.com/photo-1517314687957-13af800de1c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" />
+  <% end %>
 
-    <% if recipe.photo.attached? %>
-      <%= cl_image_tag recipe.photo.key, height: 200, width: 400, crop: :fill, class: "" %>
-    <% else %>
-      <img src="https://images.unsplash.com/photo-1517314687957-13af800de1c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80" />
-    <% end %>
-
-    <!-- Recipe general info - card -->
-    <!-- Making the card text link to the recipe detailed page (show_page) -->
-    <div class="card-recipes-info">
-      <div>
-        <h2><%= recipe.name %></h2>
-        <!-- Average rating of recipe -->
-
+  <!-- Recipe general info - card -->
+  <!-- Making the card text link to the recipe detailed page (show_page) -->
+  <div class="card-recipes-info">
+    <div>
+      <h2><%= recipe.name %></h2>
+      <!-- Average rating of recipe -->
+      <div class="rating-stars rating-stars-small">
         <%= render "recipes/average_rating", recipe: recipe %>
-
-      </div>
-      <div>
-        <% if policy(recipe).edit? %>
-          <%= link_to edit_recipe_path(recipe), class: "link-fa" do %>
-            <i class="fa fa-edit"></i>
-          <% end %>
-          <%= link_to recipe_path(recipe),
-            method: :delete,
-            data: { confirm: "Are you sure?" },
-            class: "link-fa" do %>
-            <i class="fa fa-trash link-fa"></i>
-          <% end %>
-        <% end %>
       </div>
     </div>
-
-
+    <div class="edit-icons">
+      <% if policy(recipe).edit? %>
+        <%= link_to edit_recipe_path(recipe), class: "link-fa" do %>
+          <i class="fa fa-edit"></i>
+        <% end %>
+        <%= link_to recipe_path(recipe),
+          method: :delete,
+          data: { confirm: "Are you sure?" },
+          class: "link-fa" do %>
+          <i class="fa fa-trash link-fa"></i>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

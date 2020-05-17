@@ -1,28 +1,26 @@
-<div class="rating-stars rating-stars-small">
-  <% if recipe.average_rating > 0 %>
-    <% recipe.average_rating.to_i.times do %>
-      <i class="fas fa-star"></i>
-      <% end %>
-    <% if recipe.average_rating % 1 != 0 %>
-      <i class="fas fa-star-half-alt"></i>
-      <% (5 - recipe.average_rating.to_i - 1).times do %>
-        <i class="far fa-star"></i>
-        <!-- <i><%#= "(#{ratings.length} votes)" %></i> -->
-      <% end %>
-    <% else %>
-      <% (5 - recipe.average_rating.to_i).times do %>
-        <i class="far fa-star"></i>
-      <% end %>
+<% if recipe.average_rating > 0 %>
+  <% recipe.average_rating.to_i.times do %>
+    <i class="fas fa-star"></i>
     <% end %>
-    <% if recipe.reviews.length == 1 %>
-      <i><%= "(1 vote)" %></i>
-    <% else %>
-      <i><%= "(#{recipe.reviews.length} votes)" %></i>
+  <% if recipe.average_rating % 1 != 0 %>
+    <i class="fas fa-star-half-alt"></i>
+    <% (5 - recipe.average_rating.to_i - 1).times do %>
+      <i class="far fa-star"></i>
+      <!-- <i><%#= "(#{ratings.length} votes)" %></i> -->
     <% end %>
   <% else %>
-    <% 5.times do %>
+    <% (5 - recipe.average_rating.to_i).times do %>
       <i class="far fa-star"></i>
     <% end %>
-    <i><%= "(0 vote)" %></i>
   <% end %>
-</div>
+  <% if recipe.reviews.length == 1 %>
+    <i><%= "(1 vote)" %></i>
+  <% else %>
+    <i><%= "(#{recipe.reviews.length} avis)" %></i>
+  <% end %>
+<% else %>
+  <% 5.times do %>
+    <i class="far fa-star"></i>
+  <% end %>
+  <i><%= "(0 avis)" %></i>
+<% end %>

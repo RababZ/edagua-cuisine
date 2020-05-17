@@ -6,7 +6,7 @@
       <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd-e9Kn0P1AAKT-EdAiaAVUvBtRVAJqONXIL0pJ402cOAzVi0i", class: "avatar" %>
     <% end %>
     <div class="review-header">
-      <%= review.user.email %>
+      <%= review.user.username %>
       <div class="rating-stars rating-stars-small">
         <% review.rating.to_i.times do  %>
           <i class="fas fa-star"></i>

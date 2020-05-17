@@ -31,7 +31,7 @@ tajine = Recipe.create!(
   name: 'Tajine aux pruneaux',
   category: 'Plat',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
-  active_time: '1 h 30 min',
+  active_time: '1h 30 min',
   idle_time: '_',
   difficulty: 'Facile',
   serving_size: 5,
@@ -52,6 +52,68 @@ tajine = Recipe.create!(
   ]
 )
 puts "Created #{tajine.name}"
+
+bastila = Recipe.create!(
+  user: user1,
+  name: 'Bastila au poisson',
+  category: 'Plat',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
+  active_time: '2h',
+  idle_time: '_',
+  difficulty: 'Moyen',
+  serving_size: 6,
+  ingredients_attributes: [
+    {
+      quantity: "1/2 kg",
+      name: "crevettes"
+    },
+    {
+      quantity: "1/4 kg",
+      name: "calamar"
+    },
+    {
+      quantity: "1/2 kg",
+      name: "poisson blanc"
+    }
+  ],
+  steps_attributes: [
+    { description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.' },
+    { description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.' },
+    { description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.' }
+  ]
+)
+puts "Created #{bastila.name}"
+
+poulet_mhamer = Recipe.create!(
+  user: user1,
+  name: 'Poulet Mhamer',
+  category: 'Plat',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.',
+  active_time: '2h',
+  idle_time: '_',
+  difficulty: 'Moyen',
+  serving_size: 5,
+  ingredients_attributes: [
+    {
+      quantity: "1 kg",
+      name: "poulet"
+    },
+    {
+      quantity: "2",
+      name: "oignons"
+    },
+    {
+      quantity: "1 pincée",
+      name: "sel"
+    }
+  ],
+  steps_attributes: [
+    { description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.' },
+    { description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.' },
+    { description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper orci vel quam lacinia, ultrices porttitor enim suscipit. Nulla viverra enim nec efficitur bibendum. Maecenas gravida malesuada arcu in ullamcorper.' }
+  ]
+)
+puts "Created #{poulet_mhamer.name}"
 
 # 10.times do
 #   recipe = Recipe.create!(

@@ -42,21 +42,27 @@
       <div class="tab-pane fade show active" id="dish" role="tabpanel" aria-labelledby="dish-tab">
         <div class="row">
           <% @recipes.where(category: "Plat").each do |recipe| %>
-            <%= render "recipe_card", recipe: recipe %>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <%= render "recipe_card", recipe: recipe %>
+            </div>
           <% end %>
         </div>
       </div>
       <div class="tab-pane fade" id="dessert" role="tabpanel" aria-labelledby="dessert-tab">
         <div class="row">
           <% @recipes.where(category: "Dessert").each do |recipe| %>
-            <%= render "recipe_card", recipe: recipe %>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <%= render "recipe_card", recipe: recipe %>
+            </div>
           <% end %>
         </div>
       </div>
       <div class="tab-pane fade" id="drink" role="tabpanel" aria-labelledby="drink-tab">
         <div class="row">
           <% @recipes.where(category: "Boisson").each do |recipe| %>
-            <%= render "recipe_card", recipe: recipe %>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <%= render "recipe_card", recipe: recipe %>
+            </div>
           <% end %>
         </div>
       </div>

@@ -43,14 +43,14 @@
             <%= link_to "Proposer une recette", new_recipe_path, class: "dropdown-item" %>
             <%= link_to "Mon profil", profile_path, class: "dropdown-item" %>
             <%= link_to "Mes recettes", my_recipes_path , class: "dropdown-item" %>
-            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </div>
       <% else %>
 
       <!-- If no user is signed in -->
         <div class="nav-item navbar-right-item navbar-right-links d-none d-sm-none d-md-block">
-          <%= link_to "Se connecter", new_user_session_path, class: "nav-link link-text-color" %>
+          <%= link_to "Se connecter", new_user_session_path, class: "nav-link link-text-color nav-login" %>
         </div>
         <div class="nav-item navbar-right-item navbar-right-links d-none d-sm-none d-md-block">
           <%= link_to "S'inscrire",  new_user_registration_path, class: "button button-primary" %>

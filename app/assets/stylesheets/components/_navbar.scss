@@ -27,6 +27,10 @@
   color: $green;
 }
 
+.nav-login {
+  padding: 0;
+}
+
 @media(max-width: 992px){
   .navbar-white { padding: 0.5rem 80px;}
 }
