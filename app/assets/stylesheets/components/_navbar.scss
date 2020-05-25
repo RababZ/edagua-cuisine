@@ -5,7 +5,7 @@
 }
 
 .navbar-brand img {
-  width: 60px;
+  width: 80px;
 }
 
 .navbar-right {
@@ -35,7 +35,7 @@
   background: $green;
   color: white;
   padding: 0.5rem 100px;
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,10 +46,11 @@
   }
 }
 .link-subnavbar {
+  font-size: 24px;
   color: white;
   &:hover {
-    color: white;
-    text-decoration-line: underline;
+    color: $yellow;
+    text-decoration-line: none;
   }
 }
 

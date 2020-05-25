@@ -1,40 +1,32 @@
 <!-- Home banner -->
 <div class="home-banner">
   <div class="container-edaga">
-    <div class="row">
-       <div class="col-12">
-        <h1>Notre coup de coeur de la semaine ❤️</h1>
-       </div>
-    </div>
-
-    <div class="row banner-content">
-      <% homerecipe = Recipe.find { |recipe| recipe.name == "Poulet Mhamer" } %>
-        <% default_homerecipe = Recipe.first %>
-
-      <div class="col-12 col-md-6">
-        <% if homerecipe.nil? %>
-          <h2><%= default_homerecipe.name %></h2>
-          <p><%= default_homerecipe.description %></p>
-        <% else %>
-          <h2><%= homerecipe.name %></h2>
-          <p><%= default_homerecipe.description %></p>
-        <% end %>
+    <div class="banner-content">
+      <div class="row">
+         <div class="col-12">
+          <h1>Notre coup de coeur de la semaine ❤️</h1>
+         </div>
       </div>
 
-      <div class="col-12 col-md-6">
-        <% if homerecipe.nil? %>
-          <% if default_homerecipe.photo.attached? %>
-            <%= cl_image_tag default_homerecipe.photo.key,crop: :fill, class: "banner-photo" %>
-          <% else %>
-            <%= image_tag "home-banner.jpg", class: "banner-photo" %>
-          <% end %>
-        <% else %>
+      <div class="row">
+        <% homerecipe = Recipe.find { |recipe| recipe.name == "Poulet Mhamer" } %>
+        <% homerecipe = Recipe.first if homerecipe.nil? %>
+
+        <div class="col-12 col-md-6 banner-text">
+          <div>
+            <h2><%= homerecipe.name %></h2>
+            <p><%= homerecipe.description %></p>
+          </div>
+          <%= link_to "☛ Afficher la recette", recipe_path(homerecipe), class: "link-text-color" %>
+        </div>
+
+        <div class="col-12 col-md-6">
           <% if homerecipe.photo.attached? %>
             <%= cl_image_tag homerecipe.photo.key,crop: :fill, class: "banner-photo" %>
           <% else %>
             <%= image_tag "home-banner.jpg", class: "banner-photo" %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
