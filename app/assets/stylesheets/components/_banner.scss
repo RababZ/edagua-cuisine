@@ -1,5 +1,6 @@
 .home-banner {
-  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url('https://images.pexels.com/photos/3769999/pexels-photo-3769999.jpeg?cs=srgb&dl=happy-woman-with-rolling-pin-cooking-at-home-3769999.jpg&fm=jpg');
+  // background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url('https://images.pexels.com/photos/3769999/pexels-photo-3769999.jpeg?cs=srgb&dl=happy-woman-with-rolling-pin-cooking-at-home-3769999.jpg&fm=jpg');
+  background-color: #f1f3e9;
   background-size: cover;
   background-position:center;
   // height: 600px;
@@ -7,6 +8,7 @@
   color: #f9c659;
   text-align: left;
   display: flex;
+  justify-content: center;
   align-items: center;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -23,13 +25,28 @@
 
 .home-banner p {
   font-size: 18px;
-  color: white;
+  color: $dark-gray;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
   padding-top: 20px;
   line-height: 2;
   padding-bottom: 20px;
 }
+
+.banner-content {
+  background-color: white;
+  margin: 30px 0;
+  padding: 20px 15px;
+  border-radius: 10px;
+}
+
+.banner-photo {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 
 // .page-banner {
 //   background-color: white;

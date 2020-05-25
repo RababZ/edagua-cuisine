@@ -2,24 +2,32 @@
 <div class="home-banner">
   <div class="container-edaga">
     <div class="row">
-      <div class="col-12 col-sm-10 col-md-6">
-        <h1>THE PERFECT RECIPE</h1>
+       <div class="col-12">
+        <h1>Notre coup de coeur de la semaine ❤️</h1>
+       </div>
+    </div>
+
+    <div class="row banner-content">
+      <div class="col-12 col-md-6">
+        <% homerecipe = Recipe.where(name: "Poulet Mhamer") %>
+        <% default_homerecipe = Recipe.first %>
+        <% if homerecipe.empty? %>
+          <h2><%= default_homerecipe.name %></h2>
+        <% else %>
+          <h2><%= homerecipe.name %></h2>
+          <%#= cl_image_tag homerecipe.photo.key, height: 300, width: 400, crop: :fill, class: "avatar" %>
+        <% end %>
         <p>That will keep you busy during the #Stayhome days. Oh! And that will draw a smile on your beautiful face!</p>
-        <!-- Search form -->
-          <!-- <div class="form-inline my-2 my-lg-0 search-form">
-            <%#= form_tag recipes_path, method: :get do %>
-              <%#= text_field_tag :query,
-                params[:query],
-              class: "form-control mr-sm-2 search-input",
-              placeholder: "Find a recipe"
-            %>
-
-            <%#= submit_tag "Search", class: "button button-secondary my-2" %>
-          <%# end %>
-          </div> -->
-
       </div>
-
+      <div class="col-12 col-md-6">
+        <%= image_tag "home-banner.jpg", class: "banner-photo" %>
+        <% homerecipe = Recipe.where(name: "Poulet Mhamer") %>
+        <% if homerecipe.empty? %>
+          <%#= cl_image_tag Recipe.first.photo.key, height: 300, width: 400, crop: :fill, class: "avatar" %>
+        <% else %>
+          <%#= cl_image_tag homerecipe.photo.key, height: 300, width: 400, crop: :fill, class: "avatar" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
