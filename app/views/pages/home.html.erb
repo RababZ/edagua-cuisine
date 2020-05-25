@@ -23,9 +23,17 @@
 
       <div class="col-12 col-md-6">
         <% if homerecipe.nil? %>
-          <%= image_tag "home-banner.jpg", class: "banner-photo" %>
+          <% if default_homerecipe.photo.attached? %>
+            <%= cl_image_tag default_homerecipe.photo.key,crop: :fill, class: "banner-photo" %>
+          <% else %>
+            <%= image_tag "home-banner.jpg", class: "banner-photo" %>
+          <% end %>
         <% else %>
-          <%= cl_image_tag homerecipe.photo.key, crop: :fill, class: "banner-photo" %>
+          <% if homerecipe.photo.attached? %>
+            <%= cl_image_tag homerecipe.photo.key,crop: :fill, class: "banner-photo" %>
+          <% else %>
+            <%= image_tag "home-banner.jpg", class: "banner-photo" %>
+          <% end %>
         <% end %>
       </div>
     </div>
