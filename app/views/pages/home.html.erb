@@ -8,24 +8,24 @@
     </div>
 
     <div class="row banner-content">
-      <div class="col-12 col-md-6">
-        <% homerecipe = Recipe.where(name: "Poulet Mhamer") %>
+      <% homerecipe = Recipe.find { |recipe| recipe.name == "Poulet Mhamer" } %>
         <% default_homerecipe = Recipe.first %>
-        <% if homerecipe.empty? %>
+
+      <div class="col-12 col-md-6">
+        <% if homerecipe.nil? %>
           <h2><%= default_homerecipe.name %></h2>
+          <p><%= default_homerecipe.description %></p>
         <% else %>
           <h2><%= homerecipe.name %></h2>
-          <%#= cl_image_tag homerecipe.photo.key, height: 300, width: 400, crop: :fill, class: "avatar" %>
+          <p><%= default_homerecipe.description %></p>
         <% end %>
-        <p>That will keep you busy during the #Stayhome days. Oh! And that will draw a smile on your beautiful face!</p>
       </div>
+
       <div class="col-12 col-md-6">
-        <%= image_tag "home-banner.jpg", class: "banner-photo" %>
-        <% homerecipe = Recipe.where(name: "Poulet Mhamer") %>
-        <% if homerecipe.empty? %>
-          <%#= cl_image_tag Recipe.first.photo.key, height: 300, width: 400, crop: :fill, class: "avatar" %>
+        <% if homerecipe.nil? %>
+          <%= image_tag "home-banner.jpg", class: "banner-photo" %>
         <% else %>
-          <%#= cl_image_tag homerecipe.photo.key, height: 300, width: 400, crop: :fill, class: "avatar" %>
+          <%= cl_image_tag homerecipe.photo.key, crop: :fill, class: "banner-photo" %>
         <% end %>
       </div>
     </div>
