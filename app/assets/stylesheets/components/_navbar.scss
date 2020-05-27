@@ -65,6 +65,8 @@
 }
 @media(max-width: 576px){
   .navbar-white { padding: 0.5rem 20px;}
+  .navbar-brand { margin-right: 0; }
+  .navbar-brand img { width: 60px; }
   .subnavbar { padding: 0.5rem 20px;}
 }
 
